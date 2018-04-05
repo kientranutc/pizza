@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+//----------------------------frontend--------------------------------
+Route::get('/login',[
+   'as' => 'admin.login',
+   'uses' => 'Backend\AuthController@login'
+]);
+//----------------------------backend---------------------------------
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/',[
+            'as' => 'admin.dashboard',
+            'uses' => 'Backend\DashboardController@index'
+    ]);
+});
