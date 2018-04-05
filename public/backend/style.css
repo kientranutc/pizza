@@ -1,0 +1,9 @@
+.paging_full_numbers .ui-button {
+    padding: 6px 15px;
+}
+.alert-dismissable .close, .alert-dismissible .close {
+    position: relative;
+    top: -2px;
+    right: 0px; 
+    color: inherit;
+}

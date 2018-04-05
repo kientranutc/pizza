@@ -1,6 +1,10 @@
 @extends('backend.layouts.masterpage')
 @section('title', 'dashboard')
+@section('breadcrumb')
+dashboard
+@stop
 @section('content')
+
 <div class="main-header clearfix">
 				<div class="page-title">
 					<h3 class="no-margin">Dashboard</h3>

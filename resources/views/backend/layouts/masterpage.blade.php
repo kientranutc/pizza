@@ -21,10 +21,14 @@
 
 	<!-- Morris -->
 	<link href="{{asset('backend/css/morris.css')}}" rel="stylesheet"/>
-
+	<!-- Datatable -->
+    <link href="{{asset('backend/css/jquery.dataTables_themeroller.css')}}" rel="stylesheet">
 	<!-- Endless -->
 	<link href="{{asset('backend/css/endless.min.css')}}" rel="stylesheet">
 	<link href="{{asset('backend/css/endless-skin.css')}}" rel="stylesheet">
+	<link href="{{asset('backend/style.css')}}" rel="stylesheet">
+
+		@yield('style')
 
   </head>
 
@@ -270,6 +274,7 @@
 		<div id="main-container">
 			@include('backend.partials.breadcrumb')
 			<div class="padding-md">
+				@include('backend.partials.message')
 				@yield('content')
 			</div><!-- /.padding-md -->
 		</div><!-- /main-container -->
@@ -345,13 +350,14 @@
 
 	<!-- Slimscroll -->
 	<script src="{{asset('backend/js/jquery.slimscroll.min.js')}}"></script>
-
+	 <!-- Datatable -->
+    <script src="{{asset('backend/js/jquery.dataTables.min.js')}}"></script>
 	<!-- Modernizr -->
 	<script src="{{asset('backend/js/modernizr.min.js')}}"></script>
 
 	<!-- Cookie -->
 	<script src="{{asset('backend/js/jquery.cookie.min.js')}}"></script>
 	<script src="{{asset('backend/js/endless/endless.js')}}"></script>
-
+	@yield('script')
   </body>
 </html>

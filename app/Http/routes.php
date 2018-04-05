@@ -25,4 +25,18 @@ Route::group(['prefix' => 'admin'], function () {
             'as' => 'admin.dashboard',
             'uses' => 'Backend\DashboardController@index'
     ]);
+    Route::group(['prefix' => '/category'], function () {
+        Route::get('',[
+                'as' => 'category.index',
+                'uses' => 'Backend\CategoryController@index'
+        ]);
+        Route::get('create',[
+                'as' => 'category.create',
+                'uses' => 'Backend\CategoryController@create'
+        ]);
+        Route::post('create',[
+                'as' => 'category.create',
+                'uses' => 'Backend\CategoryController@processCreate'
+        ]);
+    });
 });
