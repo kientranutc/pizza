@@ -21,7 +21,9 @@ class CategoryController extends Controller
     }
     public function index()
     {
-        return view('backend.category.index');
+        $stt=0;
+        $data = $this->categories->all();
+        return view('backend.category.index', compact('stt','data'));
     }
     public function create()
     {

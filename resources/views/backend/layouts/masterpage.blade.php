@@ -354,7 +354,6 @@
     <script src="{{asset('backend/js/jquery.dataTables.min.js')}}"></script>
 	<!-- Modernizr -->
 	<script src="{{asset('backend/js/modernizr.min.js')}}"></script>
-
 	<!-- Cookie -->
 	<script src="{{asset('backend/js/jquery.cookie.min.js')}}"></script>
 	<script src="{{asset('backend/js/endless/endless.js')}}"></script>

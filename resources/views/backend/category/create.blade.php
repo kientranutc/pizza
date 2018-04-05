@@ -11,13 +11,13 @@ Danh mục
 				{{csrf_field()}}
 					<div class="form-group {{($errors->has('name'))?'has-error':''}}">
 						<label for="exampleInputEmail1">Tên danh mục</label>
-						<input type="text" name="name" class="form-control input-sm" id="exampleInputEmail1" placeholder="Nhập tên danh mục">
+						<input type="text" name="name" value="{{old('name')}}" class="form-control input-sm" id="exampleInputEmail1" placeholder="Nhập tên danh mục">
 						<p class="text-danger"> {{$errors->first('name')}}</p>
 					</div><!-- /form-group -->
 					<div class="form-group">
 						<label class="label-checkbox">
 							Trạng thái
-							<input type="checkbox" name="active">
+							<input type="checkbox" name="active" {{(old('active'))?'checked':''}}>
 							<span class="custom-checkbox"></span>
 							</label>
 					</div><!-- /form-group -->
