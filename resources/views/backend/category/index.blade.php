@@ -6,7 +6,7 @@ Danh mục
 @section('content')
 <div class="panel panel-default">
 	<div class="panel-heading clearfix">
-		<a href="{{URL::route('category.index')}}" class="btn btn-success">Thêm mới</a>
+		<a href="{{URL::route('category.create')}}" class="btn btn-success">Thêm mới</a>
 	</div><!-- /page-title -->
 	<div class="panel panel-default table-responsive">
                     <div class="panel-heading">
