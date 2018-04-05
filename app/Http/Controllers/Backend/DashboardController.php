@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
+use Prophecy\Call\Call;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;

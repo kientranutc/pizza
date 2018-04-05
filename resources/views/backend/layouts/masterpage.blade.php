@@ -270,7 +270,7 @@
 		<div id="main-container">
 			@include('backend.partials.breadcrumb')
 			<div class="padding-md">
-				@yield('content');
+				@yield('content')
 			</div><!-- /.padding-md -->
 		</div><!-- /main-container -->
 		<!-- Footer
