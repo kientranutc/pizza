@@ -1,7 +1,7 @@
 <?php
-namespace App\Repositories\Categories;
+namespace App\Repositories\Products;
 
-interface CategoryRepositoryInterface
+interface ProductRepositoryInterface
 {
     public function all();
 
@@ -14,7 +14,5 @@ interface CategoryRepositoryInterface
     public function delete($id);
 
     public function checkNameExist($id,$name);
-
-    public function getCategoryActive();
 
 }

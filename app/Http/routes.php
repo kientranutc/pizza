@@ -50,6 +50,31 @@ Route::group(['prefix' => 'admin'], function () {
             'as' => 'category.delete',
             'uses' => 'Backend\CategoryController@delete'
         ]);
-
+    });
+    Route::group(['prefix' => '/product'], function () {
+        Route::get('', [
+            'as' => 'product.index',
+            'uses' => 'Backend\ProductController@index'
+        ]);
+        Route::get('/create', [
+            'as' => 'product.create',
+            'uses' => 'Backend\ProductController@create'
+        ]);
+        Route::get('/edit/{id}', [
+            'as' => 'product.edit',
+            'uses' => 'Backend\ProductController@edit'
+        ]);
+        Route::post('/edit/{id}', [
+            'as' => 'product.edit',
+            'uses' => 'Backend\ProductController@processEdit'
+        ]);
+        Route::post('/create', [
+            'as' => 'product.create',
+            'uses' => 'Backend\ProductController@processCreate'
+        ]);
+        Route::get('/delete/{id}', [
+            'as' => 'product.delete',
+            'uses' => 'Backend\ProductController@delete'
+        ]);
     });
 });

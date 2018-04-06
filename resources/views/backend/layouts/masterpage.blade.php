@@ -291,8 +291,27 @@
 
 					</div>
 					<div class="modal-footer">
-						<a href="" id="btn-modal-delete"class="btn btn-success">Delete</a>
-						<a href="javscript:void(0)" class="btn btn-danger" data-dismiss="modal">Cancel</a>
+						<a href="" id="btn-modal-delete"class="btn btn-success">Xóa</a>
+						<a href="javscript:void(0)" class="btn btn-danger" data-dismiss="modal">Đóng</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div id="imageModal" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-lg">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<iframe  width="100%" height="550" frameborder="0" src="{{URL::to('/')}}/filemanager/dialog.php?type=&field_id=image-input">
+						</iframe>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					</div>
 				</div>
 
@@ -320,6 +339,7 @@
 
 	<!-- Jquery -->
 	<script src="{{asset('backend/js/jquery-1.10.2.min.js')}}"></script>
+	<script src="{{asset('backend/tinymce/js/tinymce/tinymce.min.js')}}"></script>
 
 	<!-- Bootstrap -->
     <script src="{{asset('backend/bootstrap/js/bootstrap.js')}}"></script>
@@ -353,6 +373,7 @@
 	<script src="{{asset('backend/js/jquery.cookie.min.js')}}"></script>
 	<script src="{{asset('backend/js/endless/endless.js')}}"></script>
 	<script src="{{asset('backend/show_modal_delete.js')}}"></script>
+	<script src="{{asset('backend/input_add_image.js')}}"></script>
 	@yield('script')
   </body>
 </html>

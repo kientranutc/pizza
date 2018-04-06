@@ -30,7 +30,7 @@
 				</div><!-- /search-block -->
 				<div class="main-menu">
 					<ul>
-						<li class="active">
+						<li>
 							<a href="index.html">
 								<span class="menu-icon">
 									<i class="fa fa-desktop fa-lg"></i>
@@ -51,6 +51,19 @@
 								</span>
 								<span class="text">
 									Danh mục
+								</span>
+								<span class="menu-hover"></span>
+							</a>
+						</li>
+						<li class="{{(Route::currentRouteName()=='product.index')?'active':''
+								|| (Route::currentRouteName()=='product.create')?'active':''
+       						}}">
+							<a href="{{URL::route('product.index')}}">
+								<span class="menu-icon">
+									<i class="fa fa-desktop fa-lg"></i>
+								</span>
+								<span class="text">
+									Sản phẩm
 								</span>
 								<span class="menu-hover"></span>
 							</a>

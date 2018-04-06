@@ -29,7 +29,8 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $repositories = [
-                'Categories\CategoryRepositoryInterface' => 'Categories\CategoryRepository',
+            'Categories\CategoryRepositoryInterface' => 'Categories\CategoryRepository',
+            'Products\ProductRepositoryInterface' => 'Products\ProductRepository',
         ];
         foreach ($repositories as $key=>$val){
             $this->app->bind("App\\Repositories\\$key", "App\\Repositories\\$val");

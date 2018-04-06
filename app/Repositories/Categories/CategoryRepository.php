@@ -100,4 +100,13 @@ class  CategoryRepository implements CategoryRepositoryInterface
                       ->count();
     }
 
+    /**
+     * @return mixed
+     */
+    public function getCategoryActive()
+    {
+        return Category::where('active',1)
+            ->get();
+    }
+
 }
