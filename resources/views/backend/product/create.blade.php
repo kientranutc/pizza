@@ -81,7 +81,7 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label">Mô tả</label>
-                        <textarea class="form-control" placeholder="Mô tả sản phẩm" name="description" rows="3" data-required="true"></textarea>
+                        <textarea class="form-control" placeholder="Mô tả sản phẩm" name="description" rows="3" data-required="true">{{old('description')?old('description'):''}}</textarea>
                     </div><!-- /form-group -->
                 </div>
                 <div class="panel-footer text-center">

@@ -1,6 +1,7 @@
 <?php
 namespace App\Repositories\Products;
 use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 
 class  ProductRepository implements ProductRepositoryInterface
 {
