@@ -41,6 +41,20 @@
 								<span class="menu-hover"></span>
 							</a>
 						</li>
+						<li class="{{(Route::currentRouteName()=='category.index')?'active':''
+                    		|| (Route::currentRouteName()=='category.create')?'active':''
+                    		|| (Route::currentRouteName()=='category.edit')?'active':''
+       						}}">
+							<a href="{{URL::route('category.index')}}">
+								<span class="menu-icon">
+									<i class="fa fa-desktop fa-lg"></i>
+								</span>
+								<span class="text">
+									Danh mục
+								</span>
+								<span class="menu-hover"></span>
+							</a>
+						</li>
 						<li class="openable open">
 							<a href="#">
 								<span class="menu-icon">

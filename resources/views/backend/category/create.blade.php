@@ -5,6 +5,9 @@ Danh mục
 @stop
 @section('content')
 <div class="panel panel-default table-responsive">
+	<div class="panel-heading clearfix">
+		<a href="{{URL::route('category.index')}}" class="btn btn-success">Về trang trước</a>
+	</div><!-- /page-title -->
 		<div class="panel-heading">Thêm mới danh mục</div>
 			<div class="panel-body">
 				<form action="{{URL::route('category.create')}}" method="post">
@@ -17,7 +20,7 @@ Danh mục
 					<div class="form-group">
 						<label class="label-checkbox">
 							Trạng thái
-							<input type="checkbox" name="active" {{(old('active'))?'checked':''}}>
+							<input type="checkbox" name="active"{{(old('active'))?'checked':''}}>
 							<span class="custom-checkbox"></span>
 							</label>
 					</div><!-- /form-group -->

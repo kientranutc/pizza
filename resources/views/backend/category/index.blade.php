@@ -16,11 +16,11 @@ Danh mục
                         <table class="table table-striped table-bordered" id="dataTable">
                             <thead>
                                 <tr>
-                                    <th class="text-center">STT</th>
-                                    <th class="text-center">Tên danh mục</th>
-                                    <th class="text-center">Tên định danh</th>
-                                    <th class="text-center">Trạng thái</th>
-                                    <th class="text-center"></th>
+                                    <th width="10%" class="text-center">STT</th>
+                                    <th width="20%" class="text-center">Tên danh mục</th>
+                                    <th width="20%" class="text-center">Tên định danh</th>
+                                    <th width="20%" class="text-center">Trạng thái</th>
+                                    <th width="20%" class="text-center"></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -36,7 +36,10 @@ Danh mục
                                     	<span class="btn btn-danger btn-sm">Ẩn</span>
                                     @endif
                                     </td>
-                                    <td class="text-center"><span class="label label-success">In Stock</span></td>
+                                    <td class="text-center">
+                                    	<a href="{{URL::route('category.edit',$item->id)}}" class="btn btn-success"><i class="fa fa-edit fa-lg"></i> cập nhật</a>
+                                    	<a href="{{URL::route('category.delete',$item->id)}}" data-toggle="modal"  class="btn btn-danger delete-view"><i class="fa fa-trash-o fa-lg"></i> xóa</a>
+                                    </td>
                                 </tr>
 								@empty
 								@endforelse
@@ -68,9 +71,6 @@ Danh mục
                     "sZeroRecords":  "Không tìm thấy dòng nào phù hợp",
                     'sSearchPlaceholder':'Tìm kiếm'
                   },
-                  buttons: [
-                      'copy', 'csv', 'excel', 'pdf', 'print'
-                  ],
                   "columnDefs": [ {
                       "targets": 4,
                       "orderable": false

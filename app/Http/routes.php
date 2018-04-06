@@ -38,5 +38,18 @@ Route::group(['prefix' => 'admin'], function () {
                 'as' => 'category.create',
                 'uses' => 'Backend\CategoryController@processCreate'
         ]);
+        Route::get('edit/{id}',[
+                'as' => 'category.edit',
+                'uses' => 'Backend\CategoryController@edit'
+        ]);
+        Route::post('edit/{id}',[
+                'as' => 'category.edit',
+                'uses' => 'Backend\CategoryController@processEdit'
+        ]);
+        Route::get('delete/{id}',[
+            'as' => 'category.delete',
+            'uses' => 'Backend\CategoryController@delete'
+        ]);
+
     });
 });

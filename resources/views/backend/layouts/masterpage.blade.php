@@ -281,28 +281,23 @@
 		<!-- Footer
 		================================================== -->
 		<!--Modal-->
-		<div class="modal fade" id="newFolder">
-  			<div class="modal-dialog">
-    			<div class="modal-content">
-      				<div class="modal-header">
-        				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4>Create new folder</h4>
-      				</div>
-				    <div class="modal-body">
-				        <form>
-							<div class="form-group">
-								<label for="folderName">Folder Name</label>
-								<input type="text" class="form-control input-sm" id="folderName" placeholder="Folder name here...">
-							</div>
-						</form>
-				    </div>
-				    <div class="modal-footer">
-				        <button class="btn btn-sm btn-success" data-dismiss="modal" aria-hidden="true">Close</button>
-						<a href="#" class="btn btn-danger btn-sm">Save changes</a>
-				    </div>
-			  	</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
+		<div id="deleteModal" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-sm">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-body">
+						<h4 class="text-center">Bạn có muốn xóa không?</h4>
+
+					</div>
+					<div class="modal-footer">
+						<a href="" id="btn-modal-delete"class="btn btn-success">Delete</a>
+						<a href="javscript:void(0)" class="btn btn-danger" data-dismiss="modal">Cancel</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
 	</div><!-- /wrapper -->
 
 	<a href="" id="scroll-to-top" class="hidden-print"><i class="fa fa-chevron-up"></i></a>
@@ -357,6 +352,7 @@
 	<!-- Cookie -->
 	<script src="{{asset('backend/js/jquery.cookie.min.js')}}"></script>
 	<script src="{{asset('backend/js/endless/endless.js')}}"></script>
+	<script src="{{asset('backend/show_modal_delete.js')}}"></script>
 	@yield('script')
   </body>
 </html>

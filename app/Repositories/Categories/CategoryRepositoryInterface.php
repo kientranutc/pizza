@@ -13,4 +13,6 @@ interface CategoryRepositoryInterface
 
     public function delete($id);
 
+    public function checkNameExist($id,$name);
+
 }
