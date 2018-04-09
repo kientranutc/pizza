@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Đăng nhập</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -29,20 +29,23 @@
 			<div class="panel panel-default">
 				<div class="panel-heading clearfix">
 					<div class="pull-left">
-						<i class="fa fa-lock fa-lg"></i> Login
+						<i class="fa fa-lock fa-lg"></i> Đăng nhập
 					</div>
 
 
 				</div>
 				<div class="panel-body">
-					<form class="form-login">
-						<div class="form-group">
-							<label>Username</label>
-							<input type="text" placeholder="Username" class="form-control input-sm bounceIn animation-delay2" >
+					<form class="form-login" action="{{URL::route('admin.sign-in')}}" method="post">
+						{{csrf_field()}}
+						<p class="text-center text-danger"><strong>@if($errors->any())
+									{{$errors->first()}}@endif</strong></p>
+						<div class="form-group {{($errors->has('email'))?'has-error':''}}">
+							<label>Email</label>
+							<input type="text" name="email" value="{{old('email')}}"placeholder="Email" class="form-control input-sm bounceIn animation-delay2" >
 						</div>
-						<div class="form-group">
-							<label>Password</label>
-							<input type="password" placeholder="Password" class="form-control input-sm bounceIn animation-delay4">
+						<div class="form-group {{($errors->has('password'))?'has-error':''}}">
+							<label>Mật khẩu</label>
+							<input type="password" placeholder="Mật khẩu" name="password" class="form-control input-sm bounceIn animation-delay4">
 						</div>
 						<div class="form-group">
 							<label class="label-checkbox inline">
@@ -59,8 +62,7 @@
 						</div>
 
 						<hr/>
-
-						<a class="btn btn-success btn-sm bounceIn animation-delay5 login-link pull-right" href="index.html"><i class="fa fa-sign-in"></i> Sign in</a>
+						<button type="submit" class="btn btn-success btn-sm bounceIn animation-delay5 pull-right">Đăng nhập</button>
 					</form>
 				</div>
 			</div><!-- /panel -->

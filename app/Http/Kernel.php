@@ -2,6 +2,9 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\AuthMiddleware;
+use App\Http\Middleware\checkAdmin;
+use App\Http\Middleware\checkRoleDelete;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -49,5 +52,9 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Foundation\Http\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'middlewareAuth' => AuthMiddleware::class,
+        'middlewareCheckAdmin' => checkAdmin::class,
+        'middlewareCheckRoleDelte' => checkRoleDelete::class
+
     ];
 }

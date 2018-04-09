@@ -261,7 +261,7 @@
 								</div>
 							</a>
 						</li>
-						<li><a tabindex="-1" href="profile.html" class="main-link"><i class="fa fa-edit fa-lg"></i> Edit profile</a></li>
+						<li><a tabindex="-1" href="{{URL::route('user.edit',Auth::user()->id)}}" class="main-link"><i class="fa fa-edit fa-lg"></i> Sửa thông tin</a></li>
 						<li><a tabindex="-1" href="gallery.html" class="main-link"><i class="fa fa-picture-o fa-lg"></i> Photo Gallery</a></li>
 						<li><a tabindex="-1" href="#" class="theme-setting"><i class="fa fa-cog fa-lg"></i> Setting</a></li>
 						<li class="divider"></li>
@@ -324,12 +324,12 @@
 	<!-- Logout confirmation -->
 	<div class="custom-popup width-100" id="logoutConfirm">
 		<div class="padding-md">
-			<h4 class="m-top-none"> Do you want to logout?</h4>
+			<h4 class="m-top-none"> Bạn có muốn đăng xuất không?</h4>
 		</div>
 
 		<div class="text-center">
-			<a class="btn btn-success m-right-sm" href="login.html">Logout</a>
-			<a class="btn btn-danger logoutConfirm_close">Cancel</a>
+			<a class="btn btn-success m-right-sm" href="{{URL::route('admin.logout')}}">Đăng xuất</a>
+			<a class="btn btn-danger logoutConfirm_close">Đóng</a>
 		</div>
 	</div>
 
