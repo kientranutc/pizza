@@ -100,7 +100,12 @@ class UserController extends Controller
                 if ($this->userRole->update($id, [
                     'role_id' => $roleId
                 ])) {
-                    return redirect()->route('user.index')->with('success','Cập nhật người dùng thành công!');
+                    if (Auth::user()->is_admin == 1) {
+                        return redirect()->route('user.index')->with('success','Cập nhật người dùng thành công!');
+                    } else {
+                        return redirect()->route('user.edit',$id)->with('success','Cập nhật người dùng thành công!');
+                    }
+
                 } else {
                     return redirect()->back()->withErrors('Lỗi cập nhật quyền');
                 }

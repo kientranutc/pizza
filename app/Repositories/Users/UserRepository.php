@@ -45,7 +45,7 @@ class  UserRepository implements UserRepositoryInterface
         } else {
             $user->password = '';
         }
-        $user->active = 1;
+        $user->active = 0;
         $user->is_admin = 0;
         $user->save();
         return $user->id;
