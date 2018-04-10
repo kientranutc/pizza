@@ -122,7 +122,6 @@ class UserController extends Controller
      */
     public function  delete($id)
     {
-
         if ($this->user->delete($id)) {
             if($this->userRole->delete($id)){
                 return redirect()->route('user.index')->with('success','Xóa người dùng thành công!');

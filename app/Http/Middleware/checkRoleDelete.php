@@ -18,7 +18,7 @@ class checkRoleDelete
         if (\Auth::user()->is_admin == 1){
             return $next($request);
         } else {
-            return redirect()->back()->withErrors("Bạn không có quyền truy cập");
+            return redirect()->back()->withErrors("Bạn không có quyền xóa");
         }
     }
 }
