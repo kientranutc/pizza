@@ -111,6 +111,20 @@
 								<span class="menu-hover"></span>
 							</a>
 						</li>
+						<li class="{{(Route::currentRouteName()=='banner.index')?'active':''
+								|| (Route::currentRouteName()=='banner.create')?'active':''
+								|| (Route::currentRouteName()=='banner.edit')?'active':''
+       						}}">
+							<a href="{{URL::route('banner.index')}}">
+								<span class="menu-icon">
+									<i class="fa fa-desktop fa-lg"></i>
+								</span>
+								<span class="text">
+									Quản lý banner
+								</span>
+								<span class="menu-hover"></span>
+							</a>
+						</li>
 						<li>
 							<a href="gallery.html">
 								<span class="menu-icon">
