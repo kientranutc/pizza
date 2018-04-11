@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50624
 File Encoding         : 65001
 
-Date: 2018-04-09 16:51:04
+Date: 2018-04-11 16:32:06
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,14 +23,17 @@ CREATE TABLE `banner` (
   `title` varchar(255) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `status` tinyint(4) DEFAULT NULL,
+  `url` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of banner
 -- ----------------------------
+INSERT INTO banner VALUES ('1', 'Tests', 'http://store-test.local/source/Untitled.png', '1', 'http://localhost:8000/api/details', '2018-04-11 16:24:21', '2018-04-11 09:24:21');
+INSERT INTO banner VALUES ('3', 'Test', 'http://store-test.local/source/category.png', '1', 'http://localhost:8000/api/details', '2018-04-11 16:27:52', '2018-04-11 09:27:52');
 
 -- ----------------------------
 -- Table structure for `categories`
@@ -49,7 +52,7 @@ CREATE TABLE `categories` (
 -- ----------------------------
 -- Records of categories
 -- ----------------------------
-INSERT INTO categories VALUES ('4', 'a a b a', 'a-a-b-a', '1', '2018-04-06 10:29:17', '2018-04-06 03:29:17');
+INSERT INTO categories VALUES ('4', 'a a b as', 'a-a-b-as', '1', '2018-04-09 17:21:58', '2018-04-09 10:21:58');
 
 -- ----------------------------
 -- Table structure for `comment`
@@ -86,11 +89,12 @@ CREATE TABLE `customer` (
   `created_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of customer
 -- ----------------------------
+INSERT INTO customer VALUES ('1', 'test', 'test', 'kienkienutc95@gamil.com', 'áadfdsgh', '1', '0964953029', 'Hà nội', '2018-04-11 13:43:42', '2018-04-11 13:43:42');
 
 -- ----------------------------
 -- Table structure for `news`
@@ -106,31 +110,37 @@ CREATE TABLE `news` (
   `status` tinyint(4) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `user_create` varchar(255) DEFAULT NULL,
+  `user_update` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of news
 -- ----------------------------
+INSERT INTO news VALUES ('2', 'Test1-1', '2', 'http://store-test.local/source/category.png', 'test1-1', '<p>test-description2</p>', '1', '2018-04-11 13:20:51', '2018-04-11 06:20:51', 'Admin', 'Admin');
 
 -- ----------------------------
 -- Table structure for `orders`
 -- ----------------------------
 DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
-  `id` int(11) NOT NULL DEFAULT '0',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `date_order` datetime DEFAULT NULL,
   `note` text,
   `total` double NOT NULL,
   `customer_id` int(11) NOT NULL,
+  `status` tinyint(4) DEFAULT '0',
+  `user_update` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
+INSERT INTO orders VALUES ('1', '2018-04-11 13:23:00', 'test', '1000', '1', '0', 'Admin', '2018-04-11 15:03:12', '2018-04-11 08:03:12');
 
 -- ----------------------------
 -- Table structure for `order_detail`
@@ -141,6 +151,7 @@ CREATE TABLE `order_detail` (
   `product_id` int(11) NOT NULL DEFAULT '0',
   `price` double DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL,
+  `sale` tinyint(4) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`order_id`,`product_id`)
@@ -149,6 +160,8 @@ CREATE TABLE `order_detail` (
 -- ----------------------------
 -- Records of order_detail
 -- ----------------------------
+INSERT INTO order_detail VALUES ('1', '2', '60000', '2', '10', '2018-04-11 14:33:45', '2018-04-11 14:33:45');
+INSERT INTO order_detail VALUES ('1', '3', '5000', '1', null, '2018-04-11 13:24:19', '2018-04-11 13:24:19');
 
 -- ----------------------------
 -- Table structure for `products`
@@ -174,7 +187,7 @@ CREATE TABLE `products` (
 -- Records of products
 -- ----------------------------
 INSERT INTO products VALUES ('2', 'test ', 'test', '<p>test</p>', 'http://store-test.local/source/category.png', '5678568', '0', '10', '2018-04-06 16:56:12', '2018-04-06 09:56:12', '3', '1');
-INSERT INTO products VALUES ('3', 'aaaa', 'aaaa', '<p>test</p>', 'http://store-test.local/source/Untitled.png', '5678568', '1', '10', '2018-04-06 17:17:04', '2018-04-06 17:17:04', '4', '1');
+INSERT INTO products VALUES ('3', 'aaaa', 'aaaa', '<p>test</p>', 'http://store-test.local/source/Untitled.png', '5678568', '1', '10', '2018-04-09 17:24:50', '2018-04-09 10:24:50', '4', '1');
 
 -- ----------------------------
 -- Table structure for `rate_product`
@@ -234,13 +247,13 @@ CREATE TABLE `users` (
   `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO users VALUES ('1', 'Admin', 'Admin', 'kienkienutc95@gmail.com', '$2y$10$rlK4DHEnZtPhJFcFFbgj5ezqWfQnvYAgdZPvLj81StpgNLor6TnSW', null, '0', 'ITar89cOhsZMs6B7EPtSWb63dg8D1nOJRoCTZqrofkX0Km9owpi5Uk0VKfD6', null, '2018-04-09 09:49:53', '1', '');
-INSERT INTO users VALUES ('2', 'kientran', 'Trần Chung Kiên', 'admin@gmail.com', '$2y$10$TE7NFzcurLq6MG8j8dOPDu016O7j91YXFo5QLxLm.HPz17yjyceEe', null, '0', 'ntSTCOl83rBaor55UbOHMWgotKFlcGoY0J9wfQFEJDxyIjdz916LAXHpZg5D', '2017-12-25 06:36:21', '2018-04-09 09:50:00', null, 'http://store-test.local/source/Untitled.png');
+INSERT INTO users VALUES ('1', 'Admin', 'Admin', 'kienkienutc95@gmail.com', '$2y$10$rlK4DHEnZtPhJFcFFbgj5ezqWfQnvYAgdZPvLj81StpgNLor6TnSW', null, '0', 'FA56gKwhSKAM9oqF3IK20Jxit1js2QE3LpBOSahSdXH1eEN6kSwKoGpfhiTd', null, '2018-04-09 09:56:37', '1', '');
+INSERT INTO users VALUES ('6', 'member', 'member', 'admin@gmail.com', '$2y$10$yM9ijtaai8z.qVKGBgGmXeSGvfMcRMA3ORpWHb0wC0gamhsnyTJYq', null, '0', 'Z9mDqnF6JaeUWW9utkOk3iLvaGm9NWVFdczAEQrnTeFxhN1AcBHNtjciHj7r', '2018-04-09 09:56:28', '2018-04-11 02:54:38', '0', 'http://store-test.local/source/category.png');
 
 -- ----------------------------
 -- Table structure for `user_role`
@@ -258,4 +271,4 @@ CREATE TABLE `user_role` (
 -- Records of user_role
 -- ----------------------------
 INSERT INTO user_role VALUES ('1', '1', '2017-12-25 06:36:21', '2018-04-09 09:49:30');
-INSERT INTO user_role VALUES ('2', '2', null, '2018-04-09 09:49:45');
+INSERT INTO user_role VALUES ('6', '2', '2018-04-09 09:56:28', '2018-04-09 10:27:24');
