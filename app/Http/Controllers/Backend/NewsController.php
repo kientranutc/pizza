@@ -59,7 +59,7 @@ class NewsController extends Controller
     }
     public function processEdit($id, Requests\UpdateNewsRequest $request)
     {
-        if ($this->news->checkNameExist($id, $request->get('title'))>1) {
+        if ($this->news->checkNameExist($id, $request->get('title'))>0) {
             return redirect()->back()->withErrors('Tên dịch vụ đã tồn tại!');
         } else {
             if ($this->news->update($id, $request->except('_token'))) {

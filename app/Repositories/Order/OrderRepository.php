@@ -13,6 +13,23 @@ class  OrderRepository implements OrderRepositoryInterface
             ->orderBy('date_order', 'DESC')
             ->get();
     }
+
+    public function changeStatusOrder($id, $status)
+    {
+        $order = Order::find($id);
+        if ($order) {
+            if ($status == 0) {
+                $order->status = 1;
+            } else {
+                $order->status = 0;
+            }
+            return $order->save();
+        } else {
+            return false;
+        }
+
+    }
+
     public function find($id)
     {
 

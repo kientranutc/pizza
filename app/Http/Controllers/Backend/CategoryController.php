@@ -67,7 +67,7 @@ class CategoryController extends Controller
      */
     public function processEdit($id,UpdateCategoryRequest $request)
     {
-        if ($this->categories->checkNameExist($id, $request->get('name'))>1) {
+        if ($this->categories->checkNameExist($id, $request->get('name'))>0) {
             return redirect()->back()->withErrors('Tên danh mục đã tồn tại!');
         } else {
             if ($this->categories->update($id, $request->except('_token'))) {

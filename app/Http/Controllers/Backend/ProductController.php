@@ -46,7 +46,7 @@ class ProductController extends Controller
     }
     public function processEdit($id,UpdateProductRequest $request)
     {
-        if ($this->product->checkNameExist($id, $request->get('name'))>1) {
+        if ($this->product->checkNameExist($id, $request->get('name'))>0) {
             return redirect()->back()->withErrors('Tên sản phẩm đã tồn tại!');
         } else {
             if ($this->product->update($id, $request->except('_token'))) {

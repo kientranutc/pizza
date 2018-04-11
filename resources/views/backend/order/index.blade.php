@@ -43,8 +43,8 @@
                             </td>
                             <td class="text-center">{{$item->user_update}}</td>
                             <td class="text-center">
-                                <a href="{{URL::route('category.edit',$item->id)}}" data-toggle="tooltip" data-id="{{$item->id}}" title="Xem chi tiết" class="btn btn-success show-order-detail"><i class="fa fa-eye fa-lg"></i></a>
-                                <a href="{{URL::route('product.edit',$item->id)}}" data-toggle="tooltip" title="Cập nhật" class="btn btn-success"><i class="fa fa-edit fa-lg"></i></a>
+                                <a href="" data-toggle="tooltip" data-id="{{$item->id}}" title="Xem chi tiết" class="btn btn-success show-order-detail"><i class="fa fa-eye fa-lg"></i></a>
+                                <a href="{{URL::route('order.change-status',[$item->id, $item->status])}}" data-toggle="tooltip" title="Cập nhật" class="btn btn-success"><i class="fa fa-edit fa-lg"></i></a>
                             </td>
                         </tr>
                     @empty
@@ -65,11 +65,10 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Chi tiết đơn hàng</h4>
                 </div>
-                <div class="modal-body">
-                    <p>Some text in the modal.</p>
+                <div class="modal-body" id="content-order-detail">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
                 </div>
             </div>
 
@@ -107,7 +106,7 @@
             $('.show-order-detail').on('click', function(event){
                event.preventDefault();
                var id = $(this).data('id');
-               $('#showOrderDetail').modal('show');
+                $('#showOrderDetail').modal().find('#content-order-detail').load(url+"admin/order/show-detail/"+id+" #orderDetailTable");
             });
         });
     </script>

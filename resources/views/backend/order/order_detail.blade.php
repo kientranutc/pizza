@@ -30,30 +30,44 @@
                                 <th class="text-center">Sản phầm</th>
                                 <th class="text-center">Giá</th>
                                 <th class="text-center">Số lượng</th>
+                                <th class="text-center">Giảm giá</th>
                                 <th class="text-center">Thành tiền</th>
                             </tr>
                             </thead>
                             <tbody>
-                            {{--<?php $i=1;--}}
-                            {{--$totalOrder;--}}
-                            {{--?>--}}
-                            {{--@foreach($orderDetail as $item)--}}
-                                {{--<tr>--}}
-                                    {{--<td class="text-center">{{$i}}</td>--}}
-                                    {{--<td class="text-center">{{$item->name}}</td>--}}
-                                    {{--<td class="text-center">{{number_format($item->price)}}(đ)</td>--}}
-                                    {{--<td class="text-center">{{$item->quanlity}}</td>--}}
-                                    {{--<td class="text-center">{{number_format($item->total)}}</td>--}}
-                                    {{--<?php $i++;--}}
-                                    {{--$totalOrder= $item->total_order;--}}
-                                    {{--?>--}}
-                                {{--</tr>--}}
-                                {{--<tr>--}}
-                                    {{--<td colspan="4">Tổng tiền đơn hàng</td>--}}
-                                    {{--<td class="text-center">{{number_format($totalOrder)}}(đ)</td>--}}
-                                {{--</tr>--}}
-                            {{--@endforeach--}}
+                            <?php
+                            $total = 0;
+                            ?>
+                            @forelse($dataOrderDetail as $item)
+                                <tr>
+                                    <td class="text-center">{{++$stt}}</td>
+                                    <td class="text-center">{{$item->product_name}}</td>
+                                    <td class="text-center">{{number_format($item->price)}}(đ)</td>
+                                    <td class="text-center">{{$item->quantity}}</td>
+                                    <td class="text-center">{{($item->sale!=0)?$item->sale."(%)":""}}</td>
+                                    <td class="text-center">
+                                        @if($item->sale>0)
+                                            {{number_format($item->quantity*$item->price*(1-($item->sale/100))).'(đ)'}}
+                                        @else
+                                            {{number_format($item->quantity*$item->price).'( đ)'}}
+                                        @endif
+                                    </td>
 
+                                </tr>
+                                <?php
+                                if($item->sale>0) {
+                                    $total+=$item->quantity*$item->price*(1-($item->sale/100));
+                                }
+                                else {
+                                    $total+=$item->quantity*$item->price;
+                                }
+                                ?>
+                            @empty
+                            @endforelse
+                            <tr>
+                                <td colspan="5">Tổng tiền đơn hàng</td>
+                                <td class="text-center">{{number_format($total).'(đ)'}}</td>
+                            </tr>
                             </tbody>
 
                         </table>

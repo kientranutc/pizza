@@ -98,9 +98,8 @@
 								<span class="menu-hover"></span>
 							</a>
 						</li>
-						<li class="{{(Route::currentRouteName()=='news.index')?'active':''
-								|| (Route::currentRouteName()=='news.create')?'active':''
-								|| (Route::currentRouteName()=='news.edit')?'active':''
+						<li class="{{(Route::currentRouteName()=='order.index')?'active':''
+								|| (Route::currentRouteName()=='order.change-status')?'active':''
        						}}">
 							<a href="{{URL::route('order.index')}}">
 								<span class="menu-icon">

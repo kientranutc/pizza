@@ -18,9 +18,7 @@ class AppServiceProvider extends ServiceProvider
         if (env('APP_ENV') !== 'local') {
             $this->app['request']->server->set('HTTPS', true);
         }
-
     }
-
     /**
      * Register any application services.
      *
@@ -37,6 +35,7 @@ class AppServiceProvider extends ServiceProvider
             'OrderDetail\OrderDetailRepositoryInterface' => 'OrderDetail\OrderDetailRepository',
             'UserRole\UserRoleRepositoryInterface' => 'UserRole\UserRoleRepository',
             'Role\RoleRepositoryInterface' => 'Role\RoleRepository',
+            'Banner\BannerRepositoryInterface' => 'Banner\BannerRepository',
         ];
         foreach ($repositories as $key=>$val){
             $this->app->bind("App\\Repositories\\$key", "App\\Repositories\\$val");

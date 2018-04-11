@@ -165,6 +165,38 @@ Route::group(['middleware' => ['middlewareAuth']], function(){
                 'as' => 'order.show',
                 'uses' => 'Backend\OrderController@showDetail'
             ]);
+            Route::get('/change-status/{id}/{status}', [
+                'as' => 'order.change-status',
+                'uses' => 'Backend\OrderController@changeStatusOrder'
+            ]);
+        });
+        //-------------------banner---------------------------------
+        Route::group(['prefix' => '/banner'], function () {
+            Route::get('', [
+                'as' => 'banner.index',
+                'uses' => 'Backend\BannerController@index'
+            ]);
+            Route::get('/create', [
+                'as' => 'banner.create',
+                'uses' => 'Backend\BannerController@create'
+            ]);
+
+            Route::post('/create', [
+                'as' => 'banner.create',
+                'uses' => 'Backend\BannerController@processCreate'
+            ]);
+            Route::get('/edit/{id}', [
+                'as' => 'banner.edit',
+                'uses' => 'Backend\BannerController@edit'
+            ]);
+            Route::post('/edit/{id}', [
+                'as' => 'banner.edit',
+                'uses' => 'Backend\BannerController@processEdit'
+            ]);
+            Route::get('/delete/{id}', [
+                'as' => 'banner.delete',
+                'uses' => 'Backend\BannerController@delete'
+            ]);
         });
 
     });

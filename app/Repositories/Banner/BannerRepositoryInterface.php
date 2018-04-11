@@ -1,7 +1,7 @@
 <?php
-namespace App\Repositories\Order;
+namespace App\Repositories\Banner;
 
-interface OrderRepositoryInterface
+interface BannerRepositoryInterface
 {
     public function all();
 
@@ -13,6 +13,6 @@ interface OrderRepositoryInterface
 
     public function delete($id);
 
-    public function changeStatusOrder($id, $status);
+    public function checkNameExist($id,$name);
 
 }
