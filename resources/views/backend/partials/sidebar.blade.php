@@ -84,13 +84,30 @@
 
 							</ul>
 						</li>
-						<li>
-							<a href="timeline.html">
+						<li class="{{(Route::currentRouteName()=='news.index')?'active':''
+								|| (Route::currentRouteName()=='news.create')?'active':''
+								|| (Route::currentRouteName()=='news.edit')?'active':''
+       						}}">
+							<a href="{{URL::route('news.index')}}">
 								<span class="menu-icon">
-									<i class="fa fa-clock-o fa-lg"></i>
+									<i class="fa fa-desktop fa-lg"></i>
 								</span>
 								<span class="text">
-									Timeline
+									Dịch vụ
+								</span>
+								<span class="menu-hover"></span>
+							</a>
+						</li>
+						<li class="{{(Route::currentRouteName()=='news.index')?'active':''
+								|| (Route::currentRouteName()=='news.create')?'active':''
+								|| (Route::currentRouteName()=='news.edit')?'active':''
+       						}}">
+							<a href="{{URL::route('order.index')}}">
+								<span class="menu-icon">
+									<i class="fa fa-desktop fa-lg"></i>
+								</span>
+								<span class="text">
+									Quản lý đơn hàng
 								</span>
 								<span class="menu-hover"></span>
 							</a>

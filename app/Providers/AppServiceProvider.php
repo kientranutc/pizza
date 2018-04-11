@@ -32,6 +32,9 @@ class AppServiceProvider extends ServiceProvider
             'Categories\CategoryRepositoryInterface' => 'Categories\CategoryRepository',
             'Products\ProductRepositoryInterface' => 'Products\ProductRepository',
             'Users\UserRepositoryInterface' => 'Users\UserRepository',
+            'News\NewsRepositoryInterface' => 'News\NewsRepository',
+            'Order\OrderRepositoryInterface' => 'Order\OrderRepository',
+            'OrderDetail\OrderDetailRepositoryInterface' => 'OrderDetail\OrderDetailRepository',
             'UserRole\UserRoleRepositoryInterface' => 'UserRole\UserRoleRepository',
             'Role\RoleRepositoryInterface' => 'Role\RoleRepository',
         ];

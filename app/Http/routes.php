@@ -10,7 +10,11 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-//----------------------------Frontend--------------------------------
+//----------------------------Frontend---------------------------------
+Route::get('/',[
+    'as' => 'home',
+    'uses' => 'Frontend\HomeController@index'
+]);
 //----------------------------Process login----------------------------
 Route::get('/login',[
    'as' => 'admin.login',
@@ -123,7 +127,45 @@ Route::group(['middleware' => ['middlewareAuth']], function(){
                 'uses' => 'Backend\UserController@processEdit'
             ]);
 
-
         });
+        //-------------------news---------------------------------
+        Route::group(['prefix' => '/news'], function () {
+            Route::get('', [
+                'as' => 'news.index',
+                'uses' => 'Backend\NewsController@index'
+            ]);
+            Route::get('/create', [
+                'as' => 'news.create',
+                'uses' => 'Backend\NewsController@create'
+            ]);
+            Route::post('/create', [
+                'as' => 'news.create',
+                'uses' => 'Backend\NewsController@processCreate'
+            ]);
+            Route::get('/delete/{id}', [
+                'as' => 'news.delete',
+                'uses' => 'Backend\NewsController@delete'
+            ]);
+            Route::get('/edit/{id}', [
+                'as' => 'news.edit',
+                'uses' => 'Backend\NewsController@edit'
+            ]);
+            Route::post('/edit/{id}', [
+                'as' => 'news.edit',
+                'uses' => 'Backend\NewsController@processEdit'
+            ]);
+        });
+        //-------------------news---------------------------------
+        Route::group(['prefix' => '/order'], function () {
+            Route::get('', [
+                'as' => 'order.index',
+                'uses' => 'Backend\OrderController@index'
+            ]);
+            Route::get('/show-detail/{id}', [
+                'as' => 'order.show',
+                'uses' => 'Backend\OrderController@showDetail'
+            ]);
+        });
+
     });
 });
