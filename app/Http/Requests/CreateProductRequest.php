@@ -27,7 +27,7 @@ class CreateProductRequest extends Request
             'name' => 'required|unique:categories|max:255',
             'image' => 'required|max:255',
             'price' => 'required|integer',
-            'sale' => 'required|integer|between:0,100',
+            'sale' => 'integer|between:0,100',
             'category_id' =>'required|not_in:0'
         ];
     }
@@ -41,7 +41,6 @@ class CreateProductRequest extends Request
             'image.max'  => 'Độ dài đường dẫn ảnh sản phẩm vượt quá 255 ký tự',
             'price.required' => 'Giá sản phẩm cần nhập',
             'price.integer' => 'Giá sản phẩm là kiểu số',
-            'sale.required' => 'Giảm giá sản phẩm cần nhập',
             'sale.integer' => 'Giảm giá sản phẩm là kiểu số nguyên',
             'sale.between'  => 'Giảm giá từ 0 đến 100 %',
             'category_id.required' => 'Danh mục sản phẩm cần nhập',

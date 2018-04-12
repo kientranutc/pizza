@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c35a849f-0b5a-4f46-866f-652eb0bd5f29" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProcessAuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProcessAuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Users/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Users/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Users/UserRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Users/UserRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CreateProductRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CreateProductRequest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,11 +35,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProcessAuthController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProcessAuthController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/ProcessAuthController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="460">
               <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/filemanager/config/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-40">
+              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateProductRequest.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Requests/CreateProductRequest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="33" column="30" lean-forward="true" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -85,32 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ViewDataComposers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/ViewComposers/ViewDataComposers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="e#42#102#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/frontend/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1214">
               <caret line="456" column="18" selection-start-line="456" selection-start-column="18" selection-end-line="456" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/frontend/home.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2100">
-              <caret line="24" column="51" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -129,8 +124,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/backend/news/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/Repositories/News/NewsRepository.php" />
         <option value="$PROJECT_DIR$/app/Models/Customer.php" />
         <option value="$PROJECT_DIR$/app/Models/Order.php" />
         <option value="$PROJECT_DIR$/app/Models/OrderDetail.php" />
@@ -180,6 +173,8 @@
         <option value="$PROJECT_DIR$/app/Repositories/Users/UserRepositoryInterface.php" />
         <option value="$PROJECT_DIR$/app/Repositories/Users/UserRepository.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Backend/ProcessAuthController.php" />
+        <option value="$PROJECT_DIR$/public/filemanager/config/config.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/CreateProductRequest.php" />
       </list>
     </option>
   </component>
@@ -386,14 +381,6 @@
             <path>
               <item name="pizza" type="b2602c69:ProjectViewProjectNode" />
               <item name="pizza" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="pizza" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pizza" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -497,12 +484,12 @@
       <workItem from="1523326563163" duration="32000" />
       <workItem from="1523326854124" duration="358000" />
       <workItem from="1523413078547" duration="23200000" />
-      <workItem from="1523499338510" duration="16271000" />
+      <workItem from="1523499338510" duration="17422000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88274000" />
+    <option name="totallyTimeSpent" value="89425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -561,23 +548,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Backend/OrderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="37" column="72" selection-start-line="37" selection-start-column="72" selection-end-line="37" selection-end-column="72" />
-          <folding>
-            <element signature="e#48#100#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/backend/news/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1283">
-          <caret line="74" column="46" selection-start-line="74" selection-start-column="46" selection-end-line="74" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/backend/news/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-400">
@@ -955,6 +925,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/filemanager/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-40">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/CreateProductRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="33" column="30" lean-forward="true" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
         </state>
       </provider>
     </entry>
