@@ -109,6 +109,10 @@ class  UserRepository implements UserRepositoryInterface
 
     public function checkEmailAndActiveAccount($email)
     {
+        return User::where('email', $email)->count();
+    }
+    public function checkAccountActive($email)
+    {
         return User::where('email', $email)->first();
     }
 }

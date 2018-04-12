@@ -28,8 +28,8 @@ class ProcessAuthController extends Controller
     {
         $email = $request->email;
         $password = $request->password;
-        if ($this->user->checkEmailAndActiveAccount($email)->count()>0){
-            if ($this->user->checkEmailAndActiveAccount($email)->active == 0) {
+        if (($this->user->checkEmailAndActiveAccount($email))>0){
+            if ($this->user->checkAccountActive($email)->active == 0) {
                 if (Auth::attempt(['email' => $email, 'password' => $password],true)) {
                     return redirect('/admin');
                 }

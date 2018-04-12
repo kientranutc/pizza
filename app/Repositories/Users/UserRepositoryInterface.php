@@ -19,6 +19,7 @@ interface UserRepositoryInterface
 
     public function checkEmailAndActiveAccount($email);
 
+    public function checkAccountActive($email);
 
 }
 ?>

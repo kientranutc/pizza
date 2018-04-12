@@ -41,7 +41,7 @@
 									{{$errors->first()}}@endif</strong></p>
 						<div class="form-group {{($errors->has('email'))?'has-error':''}}">
 							<label>Email</label>
-							<input type="text" name="email" value="{{old('email')}}"placeholder="Email" class="form-control input-sm bounceIn animation-delay2" >
+							<input type="email" name="email" value="{{old('email')}}"placeholder="Email" class="form-control input-sm bounceIn animation-delay2" >
 						</div>
 						<div class="form-group {{($errors->has('password'))?'has-error':''}}">
 							<label>Mật khẩu</label>
