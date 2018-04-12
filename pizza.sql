@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost_3306
-Source Server Version : 50624
+Source Server Version : 50505
 Source Host           : localhost:3306
 Source Database       : pizza
 
 Target Server Type    : MYSQL
-Target Server Version : 50624
+Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-04-11 16:32:06
+Date: 2018-04-12 16:51:40
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -52,7 +52,7 @@ CREATE TABLE `categories` (
 -- ----------------------------
 -- Records of categories
 -- ----------------------------
-INSERT INTO categories VALUES ('4', 'a a b as', 'a-a-b-as', '1', '2018-04-09 17:21:58', '2018-04-09 10:21:58');
+INSERT INTO categories VALUES ('4', 'pizza', 'pizza', '1', '2018-04-12 14:57:47', '2018-04-12 07:57:47');
 
 -- ----------------------------
 -- Table structure for `comment`
@@ -89,12 +89,13 @@ CREATE TABLE `customer` (
   `created_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of customer
 -- ----------------------------
-INSERT INTO customer VALUES ('1', 'test', 'test', 'kienkienutc95@gamil.com', 'áadfdsgh', '1', '0964953029', 'Hà nội', '2018-04-11 13:43:42', '2018-04-11 13:43:42');
+INSERT INTO customer VALUES ('1', 'test', 'test', 'kienkienutc95@gamil.com', 'áadfdsgh', '1', '0964953028', 'Hà nội', '2018-04-12 16:36:47', '2018-04-12 16:36:47');
+INSERT INTO customer VALUES ('2', 'kientran', null, 'kienkienutc95@gmail.com', 'e6e061838856bf47e1de730719fb2609', null, '0964953029', null, '2018-04-12 09:36:56', '2018-04-12 09:36:56');
 
 -- ----------------------------
 -- Table structure for `news`
@@ -181,13 +182,14 @@ CREATE TABLE `products` (
   `category_id` int(11) DEFAULT NULL,
   `user_id_create` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of products
 -- ----------------------------
-INSERT INTO products VALUES ('2', 'test ', 'test', '<p>test</p>', 'http://store-test.local/source/category.png', '5678568', '0', '10', '2018-04-06 16:56:12', '2018-04-06 09:56:12', '3', '1');
-INSERT INTO products VALUES ('3', 'aaaa', 'aaaa', '<p>test</p>', 'http://store-test.local/source/Untitled.png', '5678568', '1', '10', '2018-04-09 17:24:50', '2018-04-09 10:24:50', '4', '1');
+INSERT INTO products VALUES ('2', 'test ', 'test', '<p>test</p>', 'http://store-test.local/source/cake2.png', '5678568', '1', '10', '2018-04-12 16:50:29', '2018-04-12 09:50:29', '4', '1');
+INSERT INTO products VALUES ('3', 'Pizza', 'pizza', '<p>test</p>', 'http://store-test.local/source/cake2.png', '5678568', '1', '10', '2018-04-12 14:56:33', '2018-04-12 07:56:33', '4', '1');
+INSERT INTO products VALUES ('4', 'Pizza phô mai', 'pizza-pho-mai', '<p>test</p>', 'http://store-test.local/source/cake2.png', '100000', '1', '0', '2018-04-12 15:03:06', '2018-04-12 15:03:06', '4', '1');
 
 -- ----------------------------
 -- Table structure for `rate_product`
@@ -198,12 +200,19 @@ CREATE TABLE `rate_product` (
   `product_id` int(11) DEFAULT NULL,
   `ip_address` varchar(255) DEFAULT NULL,
   `rate_number` float DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  KEY `product_id` (`product_id`),
+  CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of rate_product
 -- ----------------------------
+INSERT INTO rate_product VALUES ('1', '2', null, '2');
+INSERT INTO rate_product VALUES ('2', '3', null, '4');
+INSERT INTO rate_product VALUES ('3', '2', null, '3');
+INSERT INTO rate_product VALUES ('4', '4', null, '1');
+INSERT INTO rate_product VALUES ('5', '4', null, '4');
 
 -- ----------------------------
 -- Table structure for `role`

@@ -15,4 +15,6 @@ interface ProductRepositoryInterface
 
     public function checkNameExist($id,$name);
 
+    public function getListWish();
+
 }

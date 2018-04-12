@@ -41,6 +41,8 @@ class AccountController extends Controller
                 'phone' => $dataLogin->phone
             ]]);
             return redirect()->back();
+        } else {
+            return redirect()->back();
         }
     }
     public function logoutCustomer()

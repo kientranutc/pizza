@@ -2,6 +2,7 @@
 namespace App\Repositories\Products;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
+use DB;
 
 class  ProductRepository implements ProductRepositoryInterface
 {
@@ -122,6 +123,15 @@ class  ProductRepository implements ProductRepositoryInterface
         return Product::where('id', '<>', $id)
                         ->where('name', $name)
                         ->count();
+    }
+    public function getListWish()
+    {
+        return Product::select(DB::raw('products.*, sum(rate_product.rate_number)'))
+                        ->join('rate_product', 'rate_product.product_id', '=', 'products.id')
+                        ->where('products.status',1)
+                        ->groupBy('rate_product.product_id')
+                        ->orderBy(DB::raw('sum(rate_product.rate_number)'), 'DESC')
+                        ->take(8)->get();
     }
 
 }
