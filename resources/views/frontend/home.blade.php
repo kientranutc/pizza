@@ -2,6 +2,7 @@
 @section('title', 'Trang chủ')
 
 @section('content')
+
     <div class="love-product">
         <div class="title-category">
             <h2>Món ăn được yêu thích</h2>

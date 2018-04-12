@@ -11,8 +11,19 @@
                     <div class="col-md-12">
                         <div class="menu-top">
                             <div class="account">
+                                @if (session()->has('login-customer'))
+                                    <div class="dropdown">
+                                        <a class="dropdown-toggle active-login" type="button" data-toggle="dropdown">xin chào,{{session('login-customer')['username']}}<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="" class="show-login-customer">Tài khoản của bạn</a></li>
+                                            <li><a href="{{URL::route('logout-account')}}" class="show-login-customer">Đăng xuất({{session('login-customer')['username']}})</a></li>
+                                        </ul>
+                                    </div>
+
+                                @else
                                 <a href="#">Tạo tài khoản</a>
-                                <a href="#">Đăng nhập</a>
+                                <a href="{{URL::route('login-account')}}">Đăng nhập</a>
+                                 @endif
                             </div>
                             <div class="cart">
                                 <a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> <span class="count-order">0</span>Giỏ hàng</a>

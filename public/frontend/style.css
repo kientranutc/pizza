@@ -328,3 +328,119 @@ padding-left: 0px;
 section.banner {
     overflow: hidden;
 }
+/*--------------resgister -----------------------*/
+.block_register {
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    background: rgba(0,0,0,.5);
+    width: 620px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+.block_register  .block__header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.block_register  .block__header h2{
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    line-height: normal;
+    color: #fff;
+    text-transform: uppercase;
+}
+.block_register label.form__label {
+    color: #fff;
+}
+.register-action
+{
+    text-align: center;
+}
+.register-action>button {
+    padding: 10px 43px;
+    color: #FFFFFF;
+    background-color: #d4d4d4;
+
+    background: linear-gradient(to bottom,#00803d 0%,#00a14d 100%);
+}
+.form__input {
+    width: 100%;
+    line-height: 46px;
+    height: 46px;
+    padding: 3px 10px;
+    border: solid 1px #d9d9d9;
+    background: #fff;
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    color: #000;
+}
+/*login-customer*/
+.modal-login__content {
+    border-radius: 10px;
+    max-width: 430px;
+    border: solid 3px #007d43;
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 30px 35px;
+}
+.form__legend {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.2em;
+}
+legend {
+display: block;
+width: 100%;
+padding: 0;
+margin-bottom: 20px;
+font-size: 21px;
+line-height: inherit;
+color: #333;
+    border: none;
+}
+.form__row {
+    position: relative;
+    padding-bottom: 20px;
+}
+.modal-login__content .form__input {
+    width: 100%;
+    line-height: 46px;
+    height: 46px;
+    padding: 3px 10px;
+    border: solid 1px #d9d9d9;
+    background: #fff;
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    color: #000;
+}
+.container_cbk {
+    float: left;
+}
+.link-forgot-pass {
+    float: right;
+    color: black;
+}
+.form__row--button {
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: dotted 1px rgba(0,0,0,.3);
+}
+.form__row--button button{
+    background: linear-gradient(to bottom,#00803d 0%,#00a14d 100%);
+    color: #FFFFFF;
+    padding: 8px 35px;
+    margin-top: 10px;
+}
+.form__row--button button:hover {
+    background: linear-gradient(to bottom,#00803d 0%,#00a14d 100%);
+    color: #FFFFFF;
+}
+.active-login {
+    background: linear-gradient(to bottom,#aa050b 0%,#ed1b24 99%);
+}
+.dropdown-menu {
+    background-color: #00703c;
+}
+.show-login-customer{
+    background: unset !important;
+}

@@ -72,6 +72,13 @@
     li.menu-hide-destop{
         display: block;
     }
+    .block_register {
+        width: 100%;
+        overflow: hidden;
+    }
+    .block_register .block__header h2 {
+        font-size: 16px;
+    }
 
 }
 

@@ -15,6 +15,30 @@ Route::get('/',[
     'as' => 'home',
     'uses' => 'Frontend\HomeController@index'
 ]);
+Route::group(['prefix' => 'account'], function () {
+    Route::get('/register-account',[
+        'as' => 'register',
+        'uses' => 'Frontend\AccountController@index'
+    ]);
+    Route::post('/register-account',[
+        'as' => 'register',
+        'uses' => 'Frontend\AccountController@createAccount'
+    ]);
+    Route::get('/login-customer',[
+        'as' => 'login-account',
+        'uses' => 'Frontend\AccountController@showFormLogin'
+    ]);
+    Route::post('/login-customer',[
+        'as' => 'login-account',
+         'uses' => 'Frontend\AccountController@processLoginCustomer'
+    ]);
+    Route::get('/logout-customer',[
+        'as' => 'logout-account',
+        'uses' => 'Frontend\AccountController@logoutCustomer'
+    ]);
+});
+
+
 //----------------------------Process login----------------------------
 Route::get('/login',[
    'as' => 'admin.login',
