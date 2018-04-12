@@ -1,0 +1,23 @@
+.introduce{
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+.block__inner {
+    border-radius: 10px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background: rgba(0,0,0,.5);
+}
+.block__title {
+    text-align: center;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.block__body {
+    color: #FFFFFF;
+    font-size: 13px;
+}

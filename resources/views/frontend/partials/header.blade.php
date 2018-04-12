@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div id="logo">
-                    <a href=""><img src="{{asset('frontend/assets/img/logo.jpg')}}" alt=""></a>
+                    <a href="{{url('/')}}"><img src="{{asset('frontend/assets/img/logo.jpg')}}" alt=""></a>
                 </div>
             </div>
             <div class="col-md-8">
@@ -21,7 +21,7 @@
                                     </div>
 
                                 @else
-                                <a href="#">Tạo tài khoản</a>
+                                <a href="{{URL::route('register')}}">Tạo tài khoản</a>
                                 <a href="{{URL::route('login-account')}}">Đăng nhập</a>
                                  @endif
                             </div>
@@ -54,19 +54,29 @@
                                             <li class="dropdown">
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Thực đơn<span class="caret"></span></a>
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="#">Action</a></li>
-                                                    <li><a href="#">Another action</a></li>
-                                                    <li><a href="#">Something else here</a></li>
-
-
+                                                   @forelse($category as $item)
+                                                    <li><a href="#">{{$item->name}}</a></li>
+                                                    @empty
+                                                    @endforelse
                                                 </ul>
                                             </li>
                                             <li><a href="#">Khuyến mại</a></li>
                                             <li><a href="#">Blog</a></li>
-                                            <li><a href="#">Giới thiệu</a></li>
-                                            <li class="menu-hide-destop"><a href="#"><span class="glyphicon glyphicon-plus-sign"></span> Tạo tài khoản</a></li>
-                                            <li class="menu-hide-destop"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập</a></li>
-                                            <li class="menu-hide-destop" id="cart-mobile-hide">
+                                            <li><a href="{{URL::route('introduce')}}">Giới thiệu</a></li>
+                                            @if (session()->has('login-customer'))
+                                                <div class="dropdown" id="hidden-mobile-menu">
+                                                    <a class="dropdown-toggle active-login" type="button" data-toggle="dropdown">xin chào,{{session('login-customer')['username']}}<span class="caret"></span></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="" class="show-login-customer">Tài khoản của bạn</a></li>
+                                                        <li><a href="{{URL::route('logout-account')}}" class="show-login-customer">Đăng xuất({{session('login-customer')['username']}})</a></li>
+                                                    </ul>
+                                                </div>
+
+                                            @else
+                                            <li class="menu-hide-destop"><a href="{{URL::route('register')}}"><span class="glyphicon glyphicon-plus-sign"></span> Tạo tài khoản</a></li>
+                                            <li class="menu-hide-destop"><a href="{{URL::route('login-account')}}"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập</a></li>
+                                            @endif
+                                                <li class="menu-hide-destop" id="cart-mobile-hide">
                                                 <a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> <span class="count-order">0</span>Giỏ hàng</a>
                                             </li>
                                         </ul>

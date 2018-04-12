@@ -22,6 +22,7 @@
                         <h4>Phô Mai</h4>
                         <div class="tooltip-detail">
                             Lorem ipsum dolor sit.
+                            <a href="">xem chi tiết</a>
                         </div>
                     </div>
                 </div>

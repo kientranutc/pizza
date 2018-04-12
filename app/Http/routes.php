@@ -15,6 +15,10 @@ Route::get('/',[
     'as' => 'home',
     'uses' => 'Frontend\HomeController@index'
 ]);
+Route::get('/introduce',[
+    'as' => 'introduce',
+    'uses' => 'Frontend\IntroduceController@index'
+]);
 Route::group(['prefix' => 'account'], function () {
     Route::get('/register-account',[
         'as' => 'register',

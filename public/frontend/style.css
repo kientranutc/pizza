@@ -444,3 +444,15 @@ color: #333;
 .show-login-customer{
     background: unset !important;
 }
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+    background-color:unset;
+
+}
+.dropdown-menu>li>a:hover::before{
+    content: unset;
+}
+#hidden-mobile-menu{
+    display: none;
+}

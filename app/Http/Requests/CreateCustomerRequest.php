@@ -40,7 +40,7 @@ class CreateCustomerRequest extends Request
             'email.unique' => 'Email đã tồn tại.',
             'email.email' => 'Sai định dạng email',
             'email.max' => 'Email lớn hơn 255 ký tự.',
-            'phone.required' => 'Email không được để trống.',
+            'phone.required' => 'Điện thoại không được để trống.',
             'phone.unique' => 'Phone đã tồn tại.',
             'phone.max' => 'Email lớn hơn 255 ký tự.',
             'password.required' => 'Mật khẩu không được để trống.',

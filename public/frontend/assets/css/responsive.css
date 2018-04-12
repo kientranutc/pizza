@@ -79,7 +79,19 @@
     .block_register .block__header h2 {
         font-size: 16px;
     }
-
+    #hidden-mobile-menu{
+        display: block;
+        margin-left: 26px;
+    }
+    a.dropdown-toggle.active-login {
+        text-decoration: none;
+        background: unset;
+        color: #ffff;
+        font-size: 17px;
+    }
+    a.show-login-customer {
+        color: #fff !important;
+    }
 }
 
 @media (min-width:768px) and (max-width: 1024px) {}

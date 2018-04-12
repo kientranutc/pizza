@@ -8,10 +8,10 @@
                 <legend class="form__legend">Đăng nhập</legend>
                 {{csrf_field()}}
                 <div class="form__row">
-                    <input type="text" name="phone" id="phone" class="form__input" placeholder="Nhập số điện thoại">
+                    <input type="text" name="phone" id="phone" class="form__input" placeholder="Nhập số điện thoại" required>
                 </div>
                 <div class="form__row">
-                    <input type="password" name="password" id="password" class="form__input" placeholder="Nhập mật khẩu">
+                    <input type="password" name="password" id="password" class="form__input" placeholder="Nhập mật khẩu" required>
                 </div>
                 <div class="form__row form__row--action">
                     <div class="container_cbk">
