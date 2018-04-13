@@ -22,7 +22,7 @@
                     <div class="overlay">
                         <h4>{{$item->name}}</h4>
                         <div class="tooltip-detail">
-                            {{$item->description}}
+                            {!! $item->description !!}
                             <a href="">xem chi tiết</a>
                         </div>
                     </div>
@@ -45,22 +45,22 @@
             <div class="carousel-product">
 
                 <div class="carousel-product__item carousel-product__item--huge  ">
-                    <a href="javascript:;" title="Sample 1">
-                        <img src="http://thepizzacompany.vn/modules/zini_imagegrid/images/ea0db79cad80751a9b7295e8696a20e8d44adfca_590Wx449H (1).jpg" alt="Sample 1" class="carousel-product__img">
+                    <a href="javascript:;" title="{{$saleService[0]['title']}}">
+                        <img src="{{$saleService[0]['image']}}" alt="{{$saleService[0]['image']}}" class="carousel-product__img">
                     </a>
                 </div>
                 <div class="carousel-product__item  carousel-product__item--small  ">
-                    <a href="javascript:;" title="Xuân Phú Quý">
-                        <img src="http://thepizzacompany.vn/modules/zini_imagegrid/images/fa134c031a79503e1e704d9cb8b9decfabad50c6_285x219-(VN).jpg" alt="Xuân Phú Quý" class="carousel-product__img">
+                    <a href="javascript:;" title="{{$saleService[1]['title']}}">
+                        <img src="{{$saleService[1]['image']}}" alt="{{$saleService[1]['image']}}" class="carousel-product__img">
                     </a>
                 </div>
                 <div class="carousel-product__item  carousel-product__item--small  ">
-                    <a href="javascript:;" title="Pizza Viền Phô Mai Vua">
-                        <img src="http://thepizzacompany.vn/modules/zini_imagegrid/images/576c6f883239556c40b341467d90e4529a9e567a_260x200-(VN)-combo2.jpg" alt="Pizza Viền Phô Mai Vua" class="carousel-product__img">
+                    <a href="javascript:;" title="{{$saleService[2]['title']}}">
+                        <img src="{{$saleService[2]['image']}}" alt="{{$saleService[2]['image']}}" class="carousel-product__img">
                     </a>
                 </div>
                 <div class="carousel-product__item  carousel-product__item--medium  ">
-                    <a href="javascript:;" title="Sample 4"><img src="http://thepizzacompany.vn/modules/zini_imagegrid/images/cbd5e302940709e359efdcca18d30b13e2fb8c23_Asset 3.png" alt="Sample 4" class="carousel-product__img">
+                    <a href="javascript:;" title="{{$saleService[3]['title']}}"><img src="{{$saleService[3]['image']}}" alt="{{$saleService[3]['image']}}" class="carousel-product__img">
 
                     </a>
                 </div>

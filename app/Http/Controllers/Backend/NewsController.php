@@ -45,7 +45,7 @@ class NewsController extends Controller
     public function processCreate(Requests\CreateNewsRequest $request)
     {
         $this->news->save( $request->except('_token'));
-        return redirect()->route('news.index')->with('success','Thêm mới dịch thành công!');
+        return redirect()->route('news.index')->with('success','Thêm mới dịch vụ thành công!');
     }
 
     /**

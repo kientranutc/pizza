@@ -100,4 +100,11 @@ class  NewsRepository implements NewsRepositoryInterface
             ->where('title', $name)
             ->count();
     }
+
+    public function getService($flag,$limit)
+    {
+        return News::where('type_id',$flag)
+                    ->where('status', 1)
+                    ->take($limit)->get();
+    }
 }

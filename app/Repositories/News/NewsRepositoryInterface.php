@@ -15,4 +15,6 @@ interface NewsRepositoryInterface
 
     public function checkNameExist($id,$name);
 
+    public function getService($flag, $limit);
+
 }
