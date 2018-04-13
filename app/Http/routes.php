@@ -19,6 +19,12 @@ Route::get('/introduce',[
     'as' => 'introduce',
     'uses' => 'Frontend\IntroduceController@index'
 ]);
+Route::group(['prefix' => 'shopping'], function () {
+    Route::get('/add-cart',[
+        'as' => 'add-cart',
+        'uses' => 'Frontend\ShoppingCartController@addCart'
+    ]);
+});
 Route::group(['prefix' => 'account'], function () {
     Route::get('/register-account',[
         'as' => 'register',

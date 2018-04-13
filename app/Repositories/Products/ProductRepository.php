@@ -4,8 +4,15 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use DB;
 
+/**
+ * Class ProductRepository
+ * @package App\Repositories\Products
+ */
 class  ProductRepository implements ProductRepositoryInterface
 {
+    /**
+     * @return mixed
+     */
     public function all()
     {
         return Product::select('products.*','categories.name as category_name', 'users.fullname as fullname')
@@ -15,11 +22,18 @@ class  ProductRepository implements ProductRepositoryInterface
             ->get();
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function find($id)
     {
         return Product::find($id);
     }
 
+    /**
+     * @param $data
+     */
     public function save($data)
     {
         $product = new Product();
@@ -62,6 +76,11 @@ class  ProductRepository implements ProductRepositoryInterface
 
     }
 
+    /**
+     * @param $id
+     * @param $data
+     * @return bool
+     */
     public function update($id, $data)
     {
         $product = Product::find($id);
@@ -108,6 +127,10 @@ class  ProductRepository implements ProductRepositoryInterface
 
     }
 
+    /**
+     * @param $id
+     * @return bool
+     */
     public function delete($id)
     {
         $product = Product::find($id);
@@ -118,12 +141,21 @@ class  ProductRepository implements ProductRepositoryInterface
         }
     }
 
+    /**
+     * @param $id
+     * @param $name
+     * @return mixed
+     */
     public function checkNameExist($id, $name)
     {
         return Product::where('id', '<>', $id)
                         ->where('name', $name)
                         ->count();
     }
+    /**
+     * @todo get list product wishest
+     * @return mixed
+     */
     public function getListWish()
     {
         return Product::select(DB::raw('products.*, sum(rate_product.rate_number)'))
@@ -133,6 +165,5 @@ class  ProductRepository implements ProductRepositoryInterface
                         ->orderBy(DB::raw('sum(rate_product.rate_number)'), 'DESC')
                         ->take(8)->get();
     }
-
 }
 ?>

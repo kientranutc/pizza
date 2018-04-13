@@ -8,28 +8,51 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+/**
+ * Class AccountController
+ * @package App\Http\Controllers\Frontend
+ */
 class AccountController extends Controller
 {
+    /**
+     * AccountController constructor.
+     * @param CustomerRepositoryInterface $customer
+     */
     public function  __construct(CustomerRepositoryInterface $customer)
     {
         $this->customer = $customer;
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         return view('frontend.register');
     }
 
+    /**
+     * @param Requests\CreateCustomerRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function  createAccount(Requests\CreateCustomerRequest $request)
     {
         $this->customer->save( $request->except('_token'));
         return redirect()->back()->with('success','Bạn đã tạo tài khoản thành công!');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function showFormLogin()
     {
         return view('frontend.login_customer');
     }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function  processLoginCustomer(Request $request)
     {
         if($this->customer->loginCustomer($request->get('phone'), $request->get('password'))>0) {
@@ -45,6 +68,10 @@ class AccountController extends Controller
             return redirect()->back();
         }
     }
+
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function logoutCustomer()
     {
         session()->forget('login-customer');

@@ -37,6 +37,7 @@ class AppServiceProvider extends ServiceProvider
             'Role\RoleRepositoryInterface' => 'Role\RoleRepository',
             'Customer\CustomerRepositoryInterface' => 'Customer\CustomerRepository',
             'Banner\BannerRepositoryInterface' => 'Banner\BannerRepository',
+            'ShoppingCart\ShoppingCartRepositoryInterface' => 'ShoppingCart\ShoppingCartRepository',
         ];
         foreach ($repositories as $key=>$val){
             $this->app->bind("App\\Repositories\\$key", "App\\Repositories\\$val");

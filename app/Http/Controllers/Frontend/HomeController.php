@@ -17,7 +17,8 @@ class HomeController extends Controller
 
     public function  index()
     {
-        dd($this->product->getListWish());
-        return view('frontend.home');
+        $productWish = $this->product->getListWish();
+        return view('frontend.home', compact('productWish'));
     }
+
 }

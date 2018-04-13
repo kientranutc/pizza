@@ -9,133 +9,28 @@
         </div>
         <div class="content-product">
             <div class="row">
+                @forelse($productWish as $item)
                 <div class="col-md-3 item-product">
-                    <img src="{{asset('frontend/assets/img/cake1.jpg')}}" alt="">
+                    <img src="{{$item->image}}" alt="">
                     <div class="detail-product">
-                        <h4>Phô Mai</h4>
-                        <div  class="price"><strong class="price__text">89.000&nbsp;₫</strong></div>
+                        <h4>{{$item->name}}</h4>
+                        <div  class="price"><strong class="price__text">{{number_format($item->price)}}&nbsp;₫</strong></div>
                     </div>
                     <div class="action-add-cart">
-                        <h3><a href="/aa">Mua ngay</a></h3>
+                        <h3><a href="" data-product="{{$item->id}}" class="add-cart">Mua ngay</a></h3>
                     </div>
                     <div class="overlay">
-                        <h4>Phô Mai</h4>
+                        <h4>{{$item->name}}</h4>
                         <div class="tooltip-detail">
-                            Lorem ipsum dolor sit.
+                            {{$item->description}}
                             <a href="">xem chi tiết</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 item-product">
-                    <img src="{{asset('frontend/assets/img/cake1.jpg')}}" alt="">
-                    <div class="detail-product">
-                        <h4>Phô Mai</h4>
-                        <div  class="price"><strong class="price__text">89.000&nbsp;₫</strong></div>
-                    </div>
-                    <div class="action-add-cart">
-                        <h3><a href="/aa">Mua ngay</a></h3>
-                    </div>
-                    <div class="overlay">
-                        <h4>Phô Mai</h4>
-                        <div class="tooltip-detail">
-                            Lorem ipsum dolor sit.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 item-product">
-                    <img src="{{asset('frontend/assets/img/cake1.jpg')}}" alt="">
-                    <div class="detail-product">
-                        <h4>Phô Mai</h4>
-                        <div  class="price"><strong class="price__text">89.000&nbsp;₫</strong></div>
-                    </div>
-                    <div class="action-add-cart">
-                        <h3><a href="/aa">Mua ngay</a></h3>
-                    </div>
-                    <div class="overlay">
-                        <h4>Phô Mai</h4>
-                        <div class="tooltip-detail">
-                            Lorem ipsum dolor sit.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 item-product">
-                    <img src="{{asset('frontend/assets/img/cake1.jpg')}}" alt="">
-                    <div class="detail-product">
-                        <h4>Phô Mai</h4>
-                        <div  class="price"><strong class="price__text">89.000&nbsp;₫</strong></div>
-                    </div>
-                    <div class="action-add-cart">
-                        <h3><a href="/aa">Mua ngay</a></h3>
-                    </div>
-                    <div class="overlay">
-                        <h4>Phô Mai</h4>
-                        <div class="tooltip-detail">
-                            Lorem ipsum dolor sit.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 item-product">
-                    <img src="{{asset('frontend/assets/img/cake1.jpg')}}" alt="">
-                    <div class="detail-product">
-                        <h4>Phô Mai</h4>
-                        <div  class="price"><strong class="price__text">89.000&nbsp;₫</strong></div>
-                    </div>
-                    <div class="action-add-cart">
-                        <h3><a href="/aa">Mua ngay</a></h3>
-                    </div>
-                    <div class="overlay">
-                        <h4>Phô Mai</h4>
-                        <div class="tooltip-detail">
-                            Lorem ipsum dolor sit.
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 item-product">
-                    <img src="{{asset('frontend/assets/img/cake1.jpg')}}" alt="">
-                    <div class="detail-product">
-                        <h4>Phô Mai</h4>
-                        <div  class="price"><strong class="price__text">89.000&nbsp;₫</strong></div>
-                    </div>
-                    <div class="action-add-cart">
-                        <h3><a href="/aa">Mua ngay</a></h3>
-                    </div>
-                    <div class="overlay">
-                        <h4>Phô Mai</h4>
-                        <div class="tooltip-detail">
-                            Lorem ipsum dolor sit.
-                        </div>
-                    </div>
-                </div><div class="col-md-3 item-product">
-                    <img src="{{asset('frontend/assets/img/cake1.jpg')}}" alt="">
-                    <div class="detail-product">
-                        <h4>Phô Mai</h4>
-                        <div  class="price"><strong class="price__text">89.000&nbsp;₫</strong></div>
-                    </div>
-                    <div class="action-add-cart">
-                        <h3><a href="/aa">Mua ngay</a></h3>
-                    </div>
-                    <div class="overlay">
-                        <h4>Phô Mai</h4>
-                        <div class="tooltip-detail">
-                            Lorem ipsum dolor sit.
-                        </div>
-                    </div>
-                </div><div class="col-md-3 item-product">
-                    <img src="{{asset('frontend/assets/img/cake2.jpg')}}" alt="">
-                    <div class="detail-product">
-                        <h4>Phô Mai</h4>
-                        <div  class="price"><strong class="price__text">89.000&nbsp;₫</strong></div>
-                    </div>
-                    <div class="action-add-cart">
-                        <h3><a href="/aa">Mua ngay</a></h3>
-                    </div>
-                    <div class="overlay">
-                        <h4>Phô Mai</h4>
-                        <div class="tooltip-detail">
-                            Lorem ipsum dolor sit.
-                        </div>
-                    </div>
-                </div>
+                @empty
+                    <p class="text-center">Dữ liệu trống</p>
+                @endforelse
+
             </div>
         </div>
         <div class="load-more">
