@@ -22,8 +22,15 @@
                     <div class="overlay">
                         <h4>{{$item->name}}</h4>
                         <div class="tooltip-detail">
-                            {!! $item->description !!}
-                            <a href="">xem chi tiết</a>
+                            <p>{!! $item->description !!}</p>
+                            <div class="rating">
+                                <input type="radio" id="star5" name="rating"/><label   data-rate="5_{{$item->id}}" class = "full rate-star-val" for="star5" title="5 stars"></label>
+                                <input type="radio" id="star4" name="rating"   /><label  data-rate="4_{{$item->id}}" class = "full rate-star-val" for="star4" title="4 stars"></label>
+                                <input type="radio" id="star3" name="rating"  /><label  data-rate="3_{{$item->id}}" class = "full rate-star-val" for="star3" title="3 stars"></label>
+                                <input type="radio" id="star2" name="rating"  /><label  data-rate="2_{{$item->id}}" class = "full rate-star-val" for="star2" title="2 stars"></label>
+                                <input type="radio" id="star1" name="rating"  /><label   data-rate="1_{{$item->id}}" class = "full rate-star-val" for="star1" title="1 star"></label>
+                            </div>
+                           <p> <a href="">xem chi tiết</a></p>
                         </div>
                     </div>
                 </div>

@@ -29,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
         $repositories = [
             'Categories\CategoryRepositoryInterface' => 'Categories\CategoryRepository',
             'Products\ProductRepositoryInterface' => 'Products\ProductRepository',
+            'RateProduct\RateProductRepositoryInterface' => 'RateProduct\RateProductRepository',
             'Users\UserRepositoryInterface' => 'Users\UserRepository',
             'News\NewsRepositoryInterface' => 'News\NewsRepository',
             'Order\OrderRepositoryInterface' => 'Order\OrderRepository',

@@ -19,6 +19,10 @@ Route::get('/introduce',[
     'as' => 'introduce',
     'uses' => 'Frontend\IntroduceController@index'
 ]);
+Route::get('/rate-star',[
+    'as' => 'rate-star',
+    'uses' => 'Frontend\RateStarController@create'
+]);
 Route::group(['prefix' => 'shopping'], function () {
     Route::get('/add-cart',[
         'as' => 'add-cart',
