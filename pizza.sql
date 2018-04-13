@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-04-12 16:51:40
+Date: 2018-04-13 16:59:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -27,7 +27,7 @@ CREATE TABLE `banner` (
   `created_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of banner
@@ -114,12 +114,15 @@ CREATE TABLE `news` (
   `user_create` varchar(255) DEFAULT NULL,
   `user_update` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of news
 -- ----------------------------
-INSERT INTO news VALUES ('2', 'Test1-1', '2', 'http://store-test.local/source/category.png', 'test1-1', '<p>test-description2</p>', '1', '2018-04-11 13:20:51', '2018-04-11 06:20:51', 'Admin', 'Admin');
+INSERT INTO news VALUES ('2', 'Test1-1', '1', 'http://store-test.local/source/sale1.jpg', 'test1-1', '<p>test-description2</p>', '1', '2018-04-13 15:41:26', '2018-04-13 08:41:26', 'Admin', 'Admin');
+INSERT INTO news VALUES ('3', 'Tests11', '1', 'http://store-test.local/source/sale2.jpg', 'tests11', '', '1', '2018-04-13 08:35:21', '2018-04-13 08:35:21', 'Admin', null);
+INSERT INTO news VALUES ('4', 'test2', '1', 'http://store-test.local/source/sale2_1.jpg', 'test2', '', '1', '2018-04-13 08:35:45', '2018-04-13 08:35:45', 'Admin', null);
+INSERT INTO news VALUES ('5', 'Test1-13', '1', 'http://store-test.local/source/sale3.png', 'test1-13', '<p>test</p>', '1', '2018-04-13 08:36:10', '2018-04-13 08:36:10', 'Admin', null);
 
 -- ----------------------------
 -- Table structure for `orders`
@@ -182,7 +185,7 @@ CREATE TABLE `products` (
   `category_id` int(11) DEFAULT NULL,
   `user_id_create` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of products
@@ -190,6 +193,7 @@ CREATE TABLE `products` (
 INSERT INTO products VALUES ('2', 'test ', 'test', '<p>test</p>', 'http://store-test.local/source/cake2.png', '5678568', '1', '10', '2018-04-12 16:50:29', '2018-04-12 09:50:29', '4', '1');
 INSERT INTO products VALUES ('3', 'Pizza', 'pizza', '<p>test</p>', 'http://store-test.local/source/cake2.png', '5678568', '1', '10', '2018-04-12 14:56:33', '2018-04-12 07:56:33', '4', '1');
 INSERT INTO products VALUES ('4', 'Pizza phô mai', 'pizza-pho-mai', '<p>test</p>', 'http://store-test.local/source/cake2.png', '100000', '1', '0', '2018-04-12 15:03:06', '2018-04-12 15:03:06', '4', '1');
+INSERT INTO products VALUES ('5', 'pizza test', 'pizza-test', '<p>test</p>', 'http://store-test.local/source/cake1.png', '100000', '1', '0', '2018-04-13 10:40:02', '2018-04-13 10:40:02', '4', '1');
 
 -- ----------------------------
 -- Table structure for `rate_product`
@@ -199,20 +203,22 @@ CREATE TABLE `rate_product` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `product_id` int(11) DEFAULT NULL,
   `ip_address` varchar(255) DEFAULT NULL,
-  `rate_number` float DEFAULT NULL,
+  `rate_number` tinyint(4) DEFAULT NULL,
+  `date_create` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `product_id` (`product_id`),
   CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of rate_product
 -- ----------------------------
-INSERT INTO rate_product VALUES ('1', '2', null, '2');
-INSERT INTO rate_product VALUES ('2', '3', null, '4');
-INSERT INTO rate_product VALUES ('3', '2', null, '3');
-INSERT INTO rate_product VALUES ('4', '4', null, '1');
-INSERT INTO rate_product VALUES ('5', '4', null, '4');
+INSERT INTO rate_product VALUES ('1', '2', null, '2', '2018-04-13');
+INSERT INTO rate_product VALUES ('2', '3', null, '4', '2018-04-13');
+INSERT INTO rate_product VALUES ('3', '2', null, '3', '2018-04-13');
+INSERT INTO rate_product VALUES ('4', '4', null, '1', '2018-04-13');
+INSERT INTO rate_product VALUES ('5', '4', null, '4', '2018-04-13');
+INSERT INTO rate_product VALUES ('6', '5', null, '1', '2018-04-13');
 
 -- ----------------------------
 -- Table structure for `role`
