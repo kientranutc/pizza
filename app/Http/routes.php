@@ -24,6 +24,18 @@ Route::group(['prefix' => 'shopping'], function () {
         'as' => 'add-cart',
         'uses' => 'Frontend\ShoppingCartController@addCart'
     ]);
+    Route::get('/update-cart',[
+        'as' => 'update-cart',
+        'uses' => 'Frontend\ShoppingCartController@updateCart'
+    ]);
+    Route::get('/show-order',[
+        'as' => 'show-order',
+        'uses' => 'Frontend\ShoppingCartController@listOrder'
+    ]);
+    Route::get('/delete-cart',[
+        'as' => 'delete-cart',
+        'uses' => 'Frontend\ShoppingCartController@delete'
+    ]);
 });
 Route::group(['prefix' => 'account'], function () {
     Route::get('/register-account',[

@@ -5,7 +5,7 @@ interface ShoppingCartRepositoryInterface
 {
     public function addCart($id);
 
-    public function updateCart($id);
+    public function updateCart($id, $qty);
 
     public function deleteCart($id);
 

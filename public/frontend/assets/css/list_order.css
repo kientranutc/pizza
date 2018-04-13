@@ -1,0 +1,20 @@
+.block_list_cart{
+    border: solid 3px #007d43;
+    background-color: #fff;
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 10px 15px;
+}
+.block_list_cart .block__header {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+.block_list_cart table th {
+    background: #007d43;
+    color: #ffffff;
+}
+.qty-update {
+    width: 50%;
+}

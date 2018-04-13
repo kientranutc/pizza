@@ -26,7 +26,7 @@
                                  @endif
                             </div>
                             <div class="cart">
-                                <a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> <span class="count-order">{{\Cart::count()}}</span>Giỏ hàng</a>
+                                <a href="{{(\Cart::count()>0)?(URL::route('show-order')):''}}"><span class="glyphicon glyphicon-shopping-cart"></span> <span class="count-order">{{\Cart::count()}}</span>Giỏ hàng</a>
                             </div>
                             </ul>
                         </div>

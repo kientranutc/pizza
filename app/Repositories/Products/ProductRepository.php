@@ -156,14 +156,28 @@ class  ProductRepository implements ProductRepositoryInterface
      * @todo get list product wishest
      * @return mixed
      */
-    public function getListWish()
+    public function getListWish($flag)
     {
-        return Product::select(DB::raw('products.*, sum(rate_product.rate_number)'))
-                        ->join('rate_product', 'rate_product.product_id', '=', 'products.id')
-                        ->where('products.status',1)
-                        ->groupBy('rate_product.product_id')
-                        ->orderBy(DB::raw('sum(rate_product.rate_number)'), 'DESC')
-                        ->take(8)->get();
+        $limit = 20;
+        $query='';
+
+       if($flag == 1){
+            $query = Product::select(DB::raw('products.*, sum(rate_product.rate_number)'))
+                               ->join('rate_product', 'rate_product.product_id', '=', 'products.id')
+                               ->where('products.status',1)
+                               ->groupBy('rate_product.product_id')
+                               ->orderBy(DB::raw('sum(rate_product.rate_number)'), 'DESC')
+                               ->get()->take(8);
+
+       } else {
+           $query = Product::select(DB::raw('products.*, sum(rate_product.rate_number)'))
+               ->join('rate_product', 'rate_product.product_id', '=', 'products.id')
+               ->where('products.status',1)
+               ->groupBy('rate_product.product_id')
+               ->orderBy(DB::raw('sum(rate_product.rate_number)'), 'DESC')
+               ->paginate($limit);
+        }
+        return $query;
     }
 }
 ?>
