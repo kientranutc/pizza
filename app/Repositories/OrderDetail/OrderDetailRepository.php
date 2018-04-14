@@ -19,6 +19,23 @@ class  OrderDetailRepository implements OrderDetailRepositoryInterface
 
     public function save($data)
     {
+        $orderDetail = new OrderDetail();
+        if (isset($data['order_id'])) {
+            $orderDetail->order_id = $data['order_id'];
+        }
+        if (isset($data['product_id'])) {
+            $orderDetail->product_id = $data['product_id'];
+        }
+        if (isset($data['price'])) {
+            $orderDetail->price = $data['price'];
+        }
+        if (isset($data['quantity'])) {
+            $orderDetail->quantity = $data['quantity'];
+        }
+        if (isset($data['sale'])) {
+            $orderDetail->sale = $data['sale'];
+        }
+        $orderDetail->save();
 
     }
 

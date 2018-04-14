@@ -59,8 +59,10 @@ class AccountController extends Controller
             $dataLogin = $this->customer->getInfoLogin($request->get('phone'));
             session(['login-customer'=>[
                 'id' => $dataLogin->id,
+                'fullname' => $dataLogin->fullname,
                 'username' => $dataLogin->username,
                 'email' => $dataLogin->email,
+                'address' => $dataLogin->address,
                 'phone' => $dataLogin->phone
             ]]);
             return redirect()->back();

@@ -52,6 +52,14 @@ Route::group(['prefix' => 'shopping'], function () {
         'as' => 'delete-cart',
         'uses' => 'Frontend\ShoppingCartController@delete'
     ]);
+    Route::get('/check-out',[
+        'as' => 'check-out',
+        'uses' => 'Frontend\ShoppingCartController@checkout'
+    ]);
+    Route::post('/check-out',[
+        'as' => 'check-out',
+        'uses' => 'Frontend\ShoppingCartController@processCheckOut'
+    ]);
 });
 Route::group(['prefix' => 'account'], function () {
     Route::get('/register-account',[
