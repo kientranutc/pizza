@@ -4,15 +4,7 @@
     <option name="FILE_MASK" value="*.html" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c35a849f-0b5a-4f46-866f-652eb0bd5f29" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/wishList.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/frontend/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/frontend/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="c35a849f-0b5a-4f46-866f-652eb0bd5f29" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -496,16 +488,15 @@
       <workItem from="1523499338510" duration="18934000" />
       <workItem from="1523586015378" duration="23556000" />
       <workItem from="1523669173633" duration="11898000" />
-      <workItem from="1523689794810" duration="10236000" />
+      <workItem from="1523689794810" duration="10836000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136627000" />
+    <option name="totallyTimeSpent" value="137227000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5005208" side_tool="true" weight="0.32908705" />
