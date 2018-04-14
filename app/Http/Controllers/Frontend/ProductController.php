@@ -31,4 +31,9 @@ class ProductController extends Controller
         $helper = new Helper();
         return view('frontend.product_detail', compact('productDetail', 'dataComment', 'helper'));
     }
+    public function  wishList()
+    {
+        $productWish = $this->product->getListWish(0);
+        return view('frontend.wishList', compact('productWish'));
+    }
 }

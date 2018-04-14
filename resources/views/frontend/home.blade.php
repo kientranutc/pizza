@@ -40,8 +40,8 @@
 
             </div>
         </div>
-        <div class="load-more">
-            <a href="">Xem tất cả sản phẩm</a>
+        <div class="load-more-home">
+            <a href="{{URL::route('wish-list')}}">Xem tất cả sản phẩm</a>
         </div>
     </div>
     <div class="sale-product">

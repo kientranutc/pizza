@@ -35,6 +35,10 @@ Route::get('/product/{slug}.html',[
     'as' => 'product',
     'uses' => 'Frontend\ProductController@index'
 ]);
+Route::get('/product-wish-list.html',[
+    'as' => 'wish-list',
+    'uses' => 'Frontend\ProductController@wishList'
+]);
 Route::group(['prefix' => 'shopping'], function () {
     Route::get('/add-cart',[
         'as' => 'add-cart',
