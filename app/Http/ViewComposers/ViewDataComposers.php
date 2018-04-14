@@ -2,6 +2,7 @@
 
 namespace App\Http\ViewComposers;
 
+use App\Repositories\Banner\BannerRepositoryInterface;
 use App\Repositories\Categories\CategoryRepositoryInterface;
 use Illuminate\View\View;
 
@@ -12,15 +13,17 @@ class ViewDataComposers
      *
      */
     protected $category;
+    protected  $banner;
     /**
      * Create a new view  composer.
      *
      * @return void
      */
 
-    public function __construct(CategoryRepositoryInterface $category)
+    public function __construct(CategoryRepositoryInterface $category, BannerRepositoryInterface $banner)
     {
         $this->category = $category;
+        $this->banner = $banner;
     }
 
     /**
@@ -32,7 +35,12 @@ class ViewDataComposers
     public function compose(View $view)
     {
         $dataCategory = $this->category->getCategoryActive();
-        $view->with('category', $dataCategory);
+        $dataBanner = $this->banner->getBannerActive();
+        $view->with(
+            [
+                'category'=> $dataCategory,
+                'banner' => $dataBanner
+            ]);
 
     }
 }

@@ -60,8 +60,8 @@
                                                     @endforelse
                                                 </ul>
                                             </li>
-                                            <li><a href="#">Khuyến mại</a></li>
-                                            <li><a href="#">Blog</a></li>
+                                            <li><a href="{{URL::route('service',['type'=>1])}}">Khuyến mại</a></li>
+                                            <li><a href="{{URL::route('service',['type'=>2])}}">Blog</a></li>
                                             <li><a href="{{URL::route('introduce')}}">Giới thiệu</a></li>
                                             @if (session()->has('login-customer'))
                                                 <div class="dropdown" id="hidden-mobile-menu">

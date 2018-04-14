@@ -4,15 +4,18 @@
             <!-- Dot Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
+                @for($i=1;$i<count($banner);$i++)
+                <li data-target="#myCarousel" data-slide-to="{{$i}}"></li>
+                @endfor
             </ol>
             <!-- Items -->
             <div class="carousel-inner">
-                <div class="active item">  <img src="{{asset('frontend/assets/img/banner1.jpg')}}" class="img-responsive"></div>
-                <div class="item">  <img src="{{asset('frontend/assets/img/banner2.jpg')}}" class="img-responsive"></div>
-                <div class="item">  <img src="{{asset('frontend/assets/img/banner3.jpg')}}" class="img-responsive"></div>
-                <div class="item">  <img src="{{asset('frontend/assets/img/banner4.png')}}" class="img-responsive"></div>
+                <div class="active item">  <img src="{{current($banner)['image']}}" class="img-responsive"></div>
+                @forelse( $banner as $item)
+                <div class="item">  <img src="{{$item['image']}}" class="img-responsive"></div>
+
+                    @empty
+                @endforelse
             </div>
             <!-- Navigation -->
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">

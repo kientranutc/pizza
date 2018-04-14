@@ -17,4 +17,6 @@ interface NewsRepositoryInterface
 
     public function getService($flag, $limit);
 
+    public function  getServiceForType($type);
+
 }
