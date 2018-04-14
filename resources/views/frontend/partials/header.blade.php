@@ -55,7 +55,7 @@
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Thực đơn<span class="caret"></span></a>
                                                 <ul class="dropdown-menu">
                                                    @forelse($category as $item)
-                                                    <li><a href="#">{{$item->name}}</a></li>
+                                                    <li><a href="{{URL::route('category',$item->slug)}}">{{$item->name}}</a></li>
                                                     @empty
                                                     @endforelse
                                                 </ul>

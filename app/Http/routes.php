@@ -23,6 +23,14 @@ Route::get('/rate-star',[
     'as' => 'rate-star',
     'uses' => 'Frontend\RateStarController@create'
 ]);
+Route::get('/category/{slug}.html',[
+    'as' => 'category',
+    'uses' => 'Frontend\CategoryController@index'
+]);
+Route::get('/product/{slug}.html',[
+    'as' => 'product',
+    'uses' => 'Frontend\ProductController@index'
+]);
 Route::group(['prefix' => 'shopping'], function () {
     Route::get('/add-cart',[
         'as' => 'add-cart',

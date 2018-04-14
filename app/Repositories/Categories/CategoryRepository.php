@@ -109,4 +109,23 @@ class  CategoryRepository implements CategoryRepositoryInterface
             ->get();
     }
 
+    /**
+     * @param $slug
+     * @return mixed
+     */
+    public function getListProductForCategory($slug)
+    {
+        $limit = 20 ;
+        return Category::select('products.*')
+                        ->join('products','products.category_id', '=', 'categories.id')
+                        ->where('products.status', '=', 1)
+                        ->where('categories.slug', $slug)
+                        ->orderBy('products.id', 'DESC')
+                        ->paginate($limit);
+    }
+    public function findAttribute($att, $value)
+    {
+        return Category::where($att, $value)->first();
+    }
+
 }

@@ -179,5 +179,10 @@ class  ProductRepository implements ProductRepositoryInterface
         }
         return $query;
     }
+
+    public function findAttribute($att, $value)
+    {
+        return Product::where($att, $value)->first();
+    }
 }
 ?>

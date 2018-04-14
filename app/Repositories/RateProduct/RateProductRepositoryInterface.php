@@ -9,5 +9,4 @@ interface RateProductRepositoryInterface
 
     public function save($data);
 
-    public function update($id, $data);
 }

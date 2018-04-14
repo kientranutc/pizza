@@ -19,7 +19,7 @@ $(document).ready(function() {
                 rate_number:rateNumber
             },
             success: function(result){
-                console.log(result);
+                $('#notification-rate-star').modal('show');
             }
         });
     }
