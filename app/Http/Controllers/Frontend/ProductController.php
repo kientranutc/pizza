@@ -2,22 +2,33 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Repositories\Comment\CommentRepositoryInterface;
 use App\Repositories\Products\ProductRepositoryInterface;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Support\Helper;
 use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
-    public function  __construct(ProductRepositoryInterface $product)
+    /**
+     * ProductController constructor.
+     * @param ProductRepositoryInterface $product
+     * @param CommentRepositoryInterface $comment
+     */
+    public function  __construct(ProductRepositoryInterface $product, CommentRepositoryInterface $comment)
     {
         $this->product = $product;
+        $this->comment = $comment;
+
     }
 
     public function index($slug)
     {
         $productDetail = $this->product->findAttribute('slug', $slug);
-        return view('frontend.product_detail', compact('productDetail'));
+        $dataComment = $this->comment->getListComment($productDetail->id);
+        $helper = new Helper();
+        return view('frontend.product_detail', compact('productDetail', 'dataComment', 'helper'));
     }
 }

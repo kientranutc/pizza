@@ -5,9 +5,7 @@
 @stop
 @section('content')
     <div class="product-detail">
-        <div class="title-category">
-            <h2>{{$productDetail->name}}</h2>
-        </div>
+
         <div class="top-detail">
             <div class="row">
                 <div class="col-md-6 img-product-detail">
@@ -30,7 +28,7 @@
                         <p class="color-product"><strong>Giá: {!! number_format($productDetail->price) !!} đ</strong></p>
                     @endif
                     <div class="action-add-cart">
-                        <h3><a href="" data-product="{{$productDetail->id}}" class="add-cart-detail">Mua ngay</a></h3>
+                        <h3><a href="" data-product="{{$productDetail->id}}" class="add-cart add-cart-detail">Mua ngay</a></h3>
                     </div>
 
                 </div>
@@ -45,6 +43,59 @@
                 {!! $productDetail->description !!}
             </div>
         </div>
+        <div class="product-description comment-product">
+            <div class="product-description-title">
+                <h4>Bình luận sản phẩm</h4>
+            </div>
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="widget-area no-padding blank">
+                        <div class="status-upload">
+                            <form action="{{URL::route('comment')}}" method="post" id="form-comment">
+                                {{csrf_field()}}
+                                <input type="hidden" value="{{$productDetail->id}}" name="product_id">
+                                <input type="hidden"  name="user_id" value="{{(session()->has('login-customer'))?session('login-customer')['id']:''}}">
+                                <textarea placeholder="Bình luận " name="content"></textarea>
+                                <button type="button" id="btn-comment" class="btn btn-success green"><i class="fa fa-share"></i> Bình luận</button>
+                            </form>
+                        </div><!-- Status Upload  -->
+                    </div><!-- Widget Area -->
+                </div>
+
+            </div>
+            <div class="content-comment">
+                @if(session()->has('success'))
+                    <div class="alert alert-success alert-dismissable">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Success!</strong> {{session()->get('success')}}
+                    </div>
+                @endif
+            <div class="row">
+                @forelse($dataComment as $item)
+                <div class="col-sm-1">
+                    <div class="thumbnail">
+                        <img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                    </div><!-- /thumbnail -->
+                </div><!-- /col-sm-1 -->
+
+                <div class="col-sm-11">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <strong>{{$item->customer_name}}</strong> <span class="text-muted">bình luận {{$helper::getTime($item->created_at)}}</span>
+                        </div>
+                        <div class="panel-body">
+                            {!! $item->content !!}
+                        </div><!-- /panel-body -->
+                    </div><!-- /panel panel-default -->
+                </div><!-- /col-sm-5 -->
+                    @empty
+                @endforelse
+
+            </div>
+            </div><!-- /row -->
+        </div>
+
 
     </div>
     @stop

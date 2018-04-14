@@ -29,5 +29,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="{{asset('frontend/assets/js/shopping_cart.js')}}"></script>
 <script src="{{asset('frontend/assets/js/add_rate_star.js')}}"></script>
+<script src="{{asset('frontend/assets/js/comment.js')}}"></script>
 </body>
 </html>

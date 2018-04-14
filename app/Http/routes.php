@@ -23,6 +23,10 @@ Route::get('/rate-star',[
     'as' => 'rate-star',
     'uses' => 'Frontend\RateStarController@create'
 ]);
+Route::post('/comment',[
+    'as' => 'comment',
+    'uses' => 'Frontend\CommentController@index'
+]);
 Route::get('/category/{slug}.html',[
     'as' => 'category',
     'uses' => 'Frontend\CategoryController@index'
