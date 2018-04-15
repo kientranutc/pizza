@@ -15,7 +15,7 @@
                        @if(session()->has('success'))
                            <div class="alert alert-success alert-dismissable">
                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                               <strong>Success!</strong> {{session()->get('success')}} <a href="{{URL::route('/')}}"><strong>Mua tiếp</strong></a>
+                               <strong>Success!</strong> {{session()->get('success')}} <a href=""><strong>Mua tiếp</strong></a>
                            </div>
                        @endif
                    </div>

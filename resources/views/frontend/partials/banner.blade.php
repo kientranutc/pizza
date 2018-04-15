@@ -13,8 +13,7 @@
                 <div class="active item">  <img src="{{current($banner)['image']}}" class="img-responsive"></div>
                 @forelse( $banner as $item)
                 <div class="item">  <img src="{{$item['image']}}" class="img-responsive"></div>
-
-                    @empty
+                @empty
                 @endforelse
             </div>
             <!-- Navigation -->
