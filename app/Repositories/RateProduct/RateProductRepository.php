@@ -25,20 +25,10 @@ class  RateProductRepository implements RateProductRepositoryInterface
         if (isset($data['product_id'])) {
             $rateproduct->product_id = $data['product_id'];
         }
-        if (isset($data['ip_address'])) {
-            $rateproduct->ip_address = getHostByName(getHostName());
-        }
         if (isset($data['rate_number'])) {
             $rateproduct->rate_number = $data['rate_number'];
         }
-        if (isset($data['date_create'])) {
-            $rateproduct->date_create = Carbon::now()->toDateString();
-        }
+
         $rateproduct->save();
-    }
-
-    public function update($id, $data)
-    {
-
     }
 }

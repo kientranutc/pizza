@@ -21,16 +21,27 @@ class  CustomerRepository implements CustomerRepositoryInterface
         if (isset($data['name'])) {
             $customer->username = $data['name'];
         }
+        if (isset($data['fullname'])) {
+            $customer->fullname = $data['fullname'];
+        } else {
+            $customer->fullname = '';
+        }
         if (isset($data['email'])) {
             $customer->email = $data['email'];
         }
         if (isset($data['phone'])) {
             $customer->phone = $data['phone'];
         }
+        if (isset($data['address'])) {
+            $customer->address = $data['address'];
+        } else {
+            $customer->address = '';
+        }
         if (isset($data['password'])) {
             $customer->password = md5($data['password']);
         }
         $customer->save();
+        return $customer->id;
     }
 
     public function update($id,$data)

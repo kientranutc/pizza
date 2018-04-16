@@ -22,7 +22,7 @@
                     <div class="overlay">
                         <h4>{{$item->name}}</h4>
                         <div class="tooltip-detail">
-                            <p>{!! $item->description !!}</p>
+                            <p><strong class="text-danger">{!!($item->sale>0)?"Giảm giá:".$item->sale."(%)":'<br/>'!!}</strong></p>
                             <div class="rating">
                                 <input type="radio" id="star5" name="rating"/><label   data-rate="5_{{$item->id}}" class = "full rate-star-val" for="star5" title="5 stars"></label>
                                 <input type="radio" id="star4" name="rating"   /><label  data-rate="4_{{$item->id}}" class = "full rate-star-val" for="star4" title="4 stars"></label>
@@ -30,7 +30,7 @@
                                 <input type="radio" id="star2" name="rating"  /><label  data-rate="2_{{$item->id}}" class = "full rate-star-val" for="star2" title="2 stars"></label>
                                 <input type="radio" id="star1" name="rating"  /><label   data-rate="1_{{$item->id}}" class = "full rate-star-val" for="star1" title="1 star"></label>
                             </div>
-                           <p> <a href="">xem chi tiết</a></p>
+                           <p> <a href="{{URL::route('product', $item->slug)}}" class="btn btn-success btn-sm">xem chi tiết</a></p>
                         </div>
                     </div>
                 </div>
@@ -40,8 +40,8 @@
 
             </div>
         </div>
-        <div class="load-more">
-            <a href="">Xem tất cả sản phẩm</a>
+        <div class="load-more-home">
+            <a href="{{URL::route('wish-list')}}">Xem tất cả sản phẩm</a>
         </div>
     </div>
     <div class="sale-product">

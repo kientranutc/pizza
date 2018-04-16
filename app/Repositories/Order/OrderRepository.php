@@ -37,6 +37,24 @@ class  OrderRepository implements OrderRepositoryInterface
 
     public function save($data)
     {
+        $order = new Order();
+        if (isset($data['date_order'])) {
+            $order->date_order = $data['date_order'];
+        }
+        if (isset($data['note'])) {
+            $order->note = $data['note'];
+        }
+        if (isset($data['total'])) {
+            $order->total = $data['total'];
+        }
+        if (isset($data['customer_id'])) {
+            $order->customer_id = $data['customer_id'];
+        }
+        $order->status = 0;
+        $order->save();
+        return $order->id;
+
+
 
     }
 

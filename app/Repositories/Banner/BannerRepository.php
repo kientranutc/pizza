@@ -113,4 +113,10 @@ class  BannerRepository implements BannerRepositoryInterface
             ->where('title', $name)
             ->count();
     }
+    public function getBannerActive()
+    {
+        return Banner::where('status', 1)
+            ->orderBy('created_at', 'DESC')
+            ->get()->toArray();
+    }
 }

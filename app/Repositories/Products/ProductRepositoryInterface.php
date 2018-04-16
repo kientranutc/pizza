@@ -17,4 +17,7 @@ interface ProductRepositoryInterface
 
     public function getListWish($flag);
 
+
+    public function findAttribute($att, $value);
+
 }

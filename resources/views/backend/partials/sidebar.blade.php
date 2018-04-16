@@ -30,13 +30,13 @@
 				</div><!-- /search-block -->
 				<div class="main-menu">
 					<ul>
-						<li>
+						<li class="{{(Route::currentRouteName()=='admin.dashboard')?'active':''}}">
 							<a href="{{URL::route('admin.dashboard')}}">
 								<span class="menu-icon">
 									<i class="fa fa-desktop fa-lg"></i>
 								</span>
 								<span class="text">
-									Dashboard
+									Quản lý chung
 								</span>
 								<span class="menu-hover"></span>
 							</a>
@@ -125,53 +125,7 @@
 								<span class="menu-hover"></span>
 							</a>
 						</li>
-						<li>
-							<a href="gallery.html">
-								<span class="menu-icon">
-									<i class="fa fa-picture-o fa-lg"></i>
-								</span>
-								<span class="text">
-									Gallery
-								</span>
-								<span class="menu-hover"></span>
-							</a>
-						</li>
-						<li>
-							<a href="inbox.html">
-								<span class="menu-icon">
-									<i class="fa fa-envelope fa-lg"></i>
-								</span>
-								<span class="text">
-									Inbox
-								</span>
-								<span class="badge badge-danger bounceIn animation-delay6">4</span>
-								<span class="menu-hover"></span>
-							</a>
-						</li>
-						<li>
-							<a href="email_selection.html">
-								<span class="menu-icon">
-									<i class="fa fa-tasks fa-lg"></i>
-								</span>
-								<span class="text">
-									Email Template
-								</span>
-								<small class="badge badge-warning bounceIn animation-delay7">New</small>
-								<span class="menu-hover"></span>
-							</a>
-						</li>
-						<li class="openable">
-							<a href="#">
-								<span class="menu-icon">
-									<i class="fa fa-magic fa-lg"></i>
-								</span>
-								<span class="text">
-									Multi-Level menu
-								</span>
-								<span class="menu-hover"></span>
-							</a>
 
-						</li>
 					</ul>
 				</div><!-- /main-menu -->
 			</div><!-- /sidebar-inner -->

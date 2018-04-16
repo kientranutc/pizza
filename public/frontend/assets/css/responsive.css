@@ -95,6 +95,10 @@
     .block_list_cart {
         width: 100%;
     }
+    .product-detail{
+        width: 100% !important;
+        overflow: hidden;
+    }
 }
 
 @media (min-width:768px) and (max-width: 1024px) {}

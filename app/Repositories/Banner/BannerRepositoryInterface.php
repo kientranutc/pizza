@@ -15,4 +15,6 @@ interface BannerRepositoryInterface
 
     public function checkNameExist($id,$name);
 
+    public function getBannerActive();
+
 }

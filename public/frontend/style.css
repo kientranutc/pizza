@@ -164,21 +164,29 @@ img.img-responsive {
 .action-add-cart h3 a:hover .action-add-cart h3 {
     background: #cccccc;
 }
-.load-more {
+.load-more-home {
     text-align: center;
     margin-bottom: 40px;
     margin-top: 40px;
+
 }
-.load-more a {
-    display: inline-block;
-    width: 40%;
-    background: linear-gradient(to bottom,#00803d 0%,#00a14d 100%);
+.load-more-home a {
+    text-decoration: none;
+    width: 100%;
+    padding: 10px 20px;
+    color: #fff;
     font-size: 14px;
-    color: white;
     font-weight: 700;
     border-radius: 5px;
-    padding:10px 2px;
-    text-decoration: none;
+    /* cursor: default; */
+    background: linear-gradient(to bottom,#00803d 0%,#00a14d 100%);
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background: linear-gradient(to bottom,#00803d 0%,#00a14d 100%);
+    border-color: #00803d;
 }
 .overlay {
     display: none;
@@ -465,7 +473,9 @@ color: #333;
 
 .rating {
     border: none;
-    float: left;
+    display: inline-block;
+
+
 }
 
 .rating > input { display: none; }

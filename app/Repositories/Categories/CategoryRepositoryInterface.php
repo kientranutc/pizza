@@ -17,4 +17,9 @@ interface CategoryRepositoryInterface
 
     public function getCategoryActive();
 
+    public function getListProductForCategory($slug);
+
+    public function findAttribute($att, $value);
+
+
 }

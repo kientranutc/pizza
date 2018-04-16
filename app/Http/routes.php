@@ -23,6 +23,26 @@ Route::get('/rate-star',[
     'as' => 'rate-star',
     'uses' => 'Frontend\RateStarController@create'
 ]);
+Route::post('/comment',[
+    'as' => 'comment',
+    'uses' => 'Frontend\CommentController@index'
+]);
+Route::get('/category/{slug}.html',[
+    'as' => 'category',
+    'uses' => 'Frontend\CategoryController@index'
+]);
+Route::get('/product/{slug}.html',[
+    'as' => 'product',
+    'uses' => 'Frontend\ProductController@index'
+]);
+Route::get('/product-wish-list.html',[
+    'as' => 'wish-list',
+    'uses' => 'Frontend\ProductController@wishList'
+]);
+Route::get('/service.html',[
+    'as' => 'service',
+    'uses' => 'Frontend\ServiceController@index'
+]);
 Route::group(['prefix' => 'shopping'], function () {
     Route::get('/add-cart',[
         'as' => 'add-cart',
@@ -39,6 +59,14 @@ Route::group(['prefix' => 'shopping'], function () {
     Route::get('/delete-cart',[
         'as' => 'delete-cart',
         'uses' => 'Frontend\ShoppingCartController@delete'
+    ]);
+    Route::get('/check-out',[
+        'as' => 'check-out',
+        'uses' => 'Frontend\ShoppingCartController@checkout'
+    ]);
+    Route::post('/check-out',[
+        'as' => 'check-out',
+        'uses' => 'Frontend\ShoppingCartController@processCheckOut'
     ]);
 });
 Route::group(['prefix' => 'account'], function () {

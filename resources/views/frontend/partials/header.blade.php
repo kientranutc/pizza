@@ -55,13 +55,13 @@
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Thực đơn<span class="caret"></span></a>
                                                 <ul class="dropdown-menu">
                                                    @forelse($category as $item)
-                                                    <li><a href="#">{{$item->name}}</a></li>
+                                                    <li><a href="{{URL::route('category',$item->slug)}}">{{$item->name}}</a></li>
                                                     @empty
                                                     @endforelse
                                                 </ul>
                                             </li>
-                                            <li><a href="#">Khuyến mại</a></li>
-                                            <li><a href="#">Blog</a></li>
+                                            <li><a href="{{URL::route('service',['type'=>1])}}">Khuyến mại</a></li>
+                                            <li><a href="{{URL::route('service',['type'=>2])}}">Blog</a></li>
                                             <li><a href="{{URL::route('introduce')}}">Giới thiệu</a></li>
                                             @if (session()->has('login-customer'))
                                                 <div class="dropdown" id="hidden-mobile-menu">

@@ -107,4 +107,12 @@ class  NewsRepository implements NewsRepositoryInterface
                     ->where('status', 1)
                     ->take($limit)->get();
     }
+    public function  getServiceForType($type)
+    {
+        $limit = 20;
+        return News::where('status',1)
+                    ->where('type_id', $type)
+                    ->orderBy('created_at', 'DESC')
+                    ->paginate($limit);
+    }
 }
