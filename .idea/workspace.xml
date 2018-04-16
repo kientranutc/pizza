@@ -34,8 +34,8 @@
       <file leaf-file-name="add_rate_star.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/frontend/assets/js/add_rate_star.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+            <state relative-caret-position="320">
+              <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -278,7 +278,7 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="260" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -512,15 +512,15 @@
       <workItem from="1523326854124" duration="358000" />
       <workItem from="1523413078547" duration="23200000" />
       <workItem from="1523499338510" duration="18934000" />
-      <workItem from="1523586015378" duration="23556000" />
+      <workItem from="1523586015378" duration="23736000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114493000" />
+    <option name="totallyTimeSpent" value="114673000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -947,8 +947,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/frontend/assets/js/add_rate_star.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+        <state relative-caret-position="320">
+          <caret line="16" column="20" lean-forward="true" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
         </state>
       </provider>
     </entry>
