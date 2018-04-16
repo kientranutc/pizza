@@ -28,7 +28,6 @@
                             <td class="text-center">{{$item->name}}</td>
                             <td class="text-center">{{number_format($item->price)}}đ</td>
                             <td class="text-center">{{floatval($item->sum_star/5)}}</td>
-                          
                         </tr>
                     @empty
                     @endforelse
