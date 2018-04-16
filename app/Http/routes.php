@@ -282,6 +282,12 @@ Route::group(['middleware' => ['middlewareAuth']], function(){
                 'uses' => 'Backend\CustomerController@index'
             ]);
         });
+        Route::group(['prefix' => '/report'], function () {
+            Route::get('/product-wish', [
+                'as' => 'product-wish.index',
+                'uses' => 'Backend\ReportController@index'
+            ]);
+        });
 
     });
 });

@@ -184,5 +184,15 @@ class  ProductRepository implements ProductRepositoryInterface
     {
         return Product::where($att, $value)->first();
     }
+
+    public function getProductStar()
+    {
+        return Product::select(DB::raw('products.*, sum(rate_product.rate_number) as sum_star'))
+            ->join('rate_product', 'rate_product.product_id', '=', 'products.id')
+            ->where('products.status',1)
+            ->groupBy('rate_product.product_id')
+            ->orderBy(DB::raw('sum(rate_product.rate_number)'), 'DESC')
+            ->get()->take(8);
+    }
 }
 ?>

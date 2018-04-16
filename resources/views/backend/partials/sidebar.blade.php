@@ -81,6 +81,21 @@
 							<ul class="submenu">
 								<li><a href="{{URL::route('user.index')}}"><span class="submenu-label"></span>Quản lý user </a></li>
 								<li><a href="register.html"><span class="submenu-label">Quản lý quyền</span></a></li>
+							</ul>
+						</li>
+						<li class="openable open">
+							<a href="#">
+								<span class="menu-icon">
+									<i class="fa fa-file-text fa-lg"></i>
+								</span>
+								<span class="text">
+									Báo cáo,thống kê
+								</span>
+								<span class="menu-hover"></span>
+							</a>
+							<ul class="submenu">
+								<li><a href="{{URL::route('product-wish.index')}}"><span class="submenu-label"></span>Sản phẩm đánh giá </a></li>
+								<li><a href="register.html"><span class="submenu-label">Quản lý quyền</span></a></li>
 
 							</ul>
 						</li>
