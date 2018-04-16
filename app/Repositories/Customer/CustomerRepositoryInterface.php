@@ -19,5 +19,7 @@ interface CustomerRepositoryInterface
 
     public function getInfoLogin($phone);
 
+    public function  getAccountCustomer();
+
 
 }

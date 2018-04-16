@@ -69,4 +69,9 @@ class  CustomerRepository implements CustomerRepositoryInterface
     {
         return Customer::where('phone', $phone)->first();
     }
+    public function  getAccountCustomer()
+    {
+        return Customer::whereNotNull('password')->orderBy('created_at', 'DESC')
+                    ->get();
+    }
 }

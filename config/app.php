@@ -157,7 +157,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         \App\Providers\ComposerServiceProvider::class,
        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
-        Fedeisas\LaravelMailCssInliner\LaravelMailCssInlinerServiceProvider::class
+        Fedeisas\LaravelMailCssInliner\LaravelMailCssInlinerServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
     ],
 
@@ -205,6 +206,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
     ],
 

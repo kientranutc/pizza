@@ -276,6 +276,12 @@ Route::group(['middleware' => ['middlewareAuth']], function(){
                 'uses' => 'Backend\BannerController@delete'
             ]);
         });
+        Route::group(['prefix' => '/customer'], function () {
+            Route::get('', [
+                'as' => 'customer.index',
+                'uses' => 'Backend\CustomerController@index'
+            ]);
+        });
 
     });
 });

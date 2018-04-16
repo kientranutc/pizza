@@ -125,6 +125,17 @@
 								<span class="menu-hover"></span>
 							</a>
 						</li>
+						<li class="{{(Route::currentRouteName()=='customer.index')?'active':''}}">
+							<a href="{{URL::route('customer.index')}}">
+								<span class="menu-icon">
+									<i class="fa fa-desktop fa-lg"></i>
+								</span>
+								<span class="text">
+									Tài khoản khách hàng
+								</span>
+								<span class="menu-hover"></span>
+							</a>
+						</li>
 
 					</ul>
 				</div><!-- /main-menu -->
