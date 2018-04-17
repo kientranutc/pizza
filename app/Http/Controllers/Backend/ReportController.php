@@ -29,7 +29,7 @@ class ReportController extends Controller
         $date = $request->get('date', -1);
         $dataProductNoOrder = [];
         $stt = 0;
-        if ($request->has('date') &&  $date != -1 && array_key_exists($date,Config('constant.select_date'))) {
+        if ($request->has('date') &&  $date != -1 && array_key_exists($date, Config('constant.select_date'))) {
             $dateFormat = helper::getTimeSearch(1, $date, '', '');
             $dataProductNoOrder = $this->product->getProductNoOrder($dateFormat['start'], $dateFormat['end']);
         }

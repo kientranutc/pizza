@@ -73,6 +73,7 @@ class  ProductRepository implements ProductRepositoryInterface
         } else {
             $product->status = 1;
         }
+        $product->user_id_create = Auth::user()->id;
         $product->save();
 
     }
