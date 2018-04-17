@@ -21,4 +21,5 @@ interface ProductRepositoryInterface
 
     public function getProductStar();
 
+    public function getProductNoOrder($startdate, $endDate);
 }

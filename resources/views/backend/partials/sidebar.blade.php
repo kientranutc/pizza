@@ -95,7 +95,7 @@
 							</a>
 							<ul class="submenu">
 								<li><a href="{{URL::route('product-wish.index')}}"><span class="submenu-label"></span>Sản phẩm đánh giá </a></li>
-								<li><a href="register.html"><span class="submenu-label">Quản lý quyền</span></a></li>
+								<li><a href="{{URL::route('product-no-order.index')}}"><span class="submenu-label"></span>Sản phẩm tồn kho </a></li>
 
 							</ul>
 						</li>

@@ -1,5 +1,6 @@
 <?php
 namespace App\Repositories\Products;
+use App\Models\OrderDetail;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use DB;
@@ -160,7 +161,6 @@ class  ProductRepository implements ProductRepositoryInterface
     {
         $limit = 20;
         $query='';
-
        if($flag == 1){
             $query = Product::select(DB::raw('products.*, sum(rate_product.rate_number)'))
                                ->join('rate_product', 'rate_product.product_id', '=', 'products.id')
@@ -168,14 +168,13 @@ class  ProductRepository implements ProductRepositoryInterface
                                ->groupBy('rate_product.product_id')
                                ->orderBy(DB::raw('sum(rate_product.rate_number)'), 'DESC')
                                ->get()->take(8);
-
        } else {
            $query = Product::select(DB::raw('products.*, sum(rate_product.rate_number)'))
-               ->join('rate_product', 'rate_product.product_id', '=', 'products.id')
-               ->where('products.status',1)
-               ->groupBy('rate_product.product_id')
-               ->orderBy(DB::raw('sum(rate_product.rate_number)'), 'DESC')
-               ->paginate($limit);
+                                ->join('rate_product', 'rate_product.product_id', '=', 'products.id')
+                                ->where('products.status',1)
+                                ->groupBy('rate_product.product_id')
+                                ->orderBy(DB::raw('sum(rate_product.rate_number)'), 'DESC')
+                                ->paginate($limit);
         }
         return $query;
     }
@@ -193,6 +192,17 @@ class  ProductRepository implements ProductRepositoryInterface
             ->groupBy('rate_product.product_id')
             ->orderBy(DB::raw('sum(rate_product.rate_number)'), 'DESC')
             ->get();
+    }
+
+    public function getProductNoOrder($startdate, $endDate)
+    {
+        $orderDetail  = OrderDetail::select('order_detail.product_id')
+                                    ->where('created_at','>=', $startdate)
+                                    ->where('created_at', '<=', $endDate)
+                                    ->get()->toArray();
+        return Product::select('products.*')
+                        ->whereNotIn('products.id', $orderDetail)
+                        ->get();
     }
 }
 ?>

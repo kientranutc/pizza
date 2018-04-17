@@ -12,32 +12,30 @@
 <table class="table table-bordered">
     <thead>
     <tr>
-        <th colspan="6" align="center">Thống kê sản phẩm được đánh giá</th>
+        <th colspan="6" align="center">Thống kê sản phẩm tồn kho</th>
     </tr>
-    <tr>
-        <th colspan="6" rowspan="3"></th>
-    </tr>
+
     <tr>
         <th>STT</th>
         <th>Sản phẩm</th>
+        <th>Ảnh sản phẩm</th>
         <th>Giá</th>
-        <th>Đánh giá trung bình(5*)</th>
     </tr>
     </thead>
     <tbody>
     <?php
-            $stt=1;
+    $stt=1;
     ?>
     @forelse($data as $item)
-    <tr>
-        <td>{{++$stt}}</td>
-        <td>{{$item->name}}</td>
-        <td>{{$item->price}}</td>
-        <td>{{$item->sum_star}}</td>
-    </tr>
-    <?php
-    $stt++;
-    ?>
+        <tr>
+            <td>{{++$stt}}</td>
+            <td>{{$item->name}}</td>
+            <td><img src="{{public_path('source/'.explode('/source', $item->image)[1])}}" alt="{{$item->image}}"></td>
+            <td>{{number_format($item->price)}}đ</td>
+        </tr>
+        <?php
+        $stt++;
+        ?>
     @empty
         <tr>
             <td colspan="3">Dữ liệu trống</td>

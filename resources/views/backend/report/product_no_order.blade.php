@@ -1,16 +1,35 @@
 @extends('backend.layouts.masterpage')
-@section('title', 'Sản phẩm đánh giá')
+@section('title', 'Sản phẩm tồn kho')
 @section('breadcrumb')
-    Sản phẩm đánh giá
+    Sản phẩm tồn kho
 @stop
 @section('content')
     <div class="panel panel-default">
-        <div class="panel-heading clearfix text-right">
-            <a href="{{URL::route('export-product-wish')}}" class="btn btn-success"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Tải file excel</a>
+        <div class="panel-heading clearfix">
+           <div class="row">
+               <div class="col-md-6">
+                   <form class="form-inline" action="" method="get">
+                       <div class="form-group">
+                           <label for="date">Thời gian:</label>
+                           <select class="form-control" id="date" name="date">
+                               <option value="-1">--Chọn thời gian--</option>
+                               @foreach(Config('constant.select_date') as $k=>$v)
+                               <option value="{{$k}}" {{(Request::get('date', -1)==$k)?'selected':''}}>{{$v}}</option>
+                               @endforeach
+                           </select>
+                       </div>
+                       <button type="submit" class="btn btn-danger"><i class="fa fa-filter" aria-hidden="true"></i> Lọc</button>
+                   </form>
+               </div>
+               <div class="col-md-6 text-right">
+                   <a href="{{URL::route('export-product-no-order',['date' =>(Request::has('date')?Request::get('date'):-1)])}}" class="btn btn-success"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Tải file excel</a>
+
+               </div>
+           </div>
         </div><!-- /page-title -->
         <div class="panel panel-default table-responsive">
             <div class="panel-heading">
-                Tài khoản khách hàng
+                Sản phẩm tồn kho
             </div>
             <div class="padding-md clearfix">
                 <table class="table table-striped table-bordered" id="dataTable">
@@ -23,12 +42,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @forelse ($productMaxStar  as $item)
+                    @forelse ($dataProductNoOrder  as $item)
                         <tr>
                             <td class="text-center">{{++$stt}}</td>
                             <td class="text-center">{{$item->name}}</td>
+                            <td class="text-center"><img src="{{$item->image}}" alt="{{$item->image}}"></td>
                             <td class="text-center">{{number_format($item->price)}}đ</td>
-                            <td class="text-center">{{floatval($item->sum_star/5)}}</td>
+                            
                         </tr>
                     @empty
                     @endforelse
