@@ -5,7 +5,8 @@
 @stop
 @section('content')
     <div class="panel panel-default">
-        <div class="panel-heading clearfix">
+        <div class="panel-heading clearfix text-right">
+            <a href="{{URL::route('export-product-wish')}}" class="btn btn-success"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Tải file excel</a>
         </div><!-- /page-title -->
         <div class="panel panel-default table-responsive">
             <div class="panel-heading">

@@ -288,6 +288,12 @@ Route::group(['middleware' => ['middlewareAuth']], function(){
                 'uses' => 'Backend\ReportController@index'
             ]);
         });
+        Route::group(['prefix' => '/export'], function () {
+            Route::get('/export-product-wish', [
+                'as' => 'export-product-wish',
+                'uses' => 'Backend\ExportController@exportProductStar'
+            ]);
+        });
 
     });
 });

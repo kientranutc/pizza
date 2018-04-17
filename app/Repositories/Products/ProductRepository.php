@@ -192,7 +192,7 @@ class  ProductRepository implements ProductRepositoryInterface
             ->where('products.status',1)
             ->groupBy('rate_product.product_id')
             ->orderBy(DB::raw('sum(rate_product.rate_number)'), 'DESC')
-            ->get()->take(8);
+            ->get();
     }
 }
 ?>

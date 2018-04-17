@@ -39,6 +39,7 @@ class AppServiceProvider extends ServiceProvider
             'Role\RoleRepositoryInterface' => 'Role\RoleRepository',
             'Customer\CustomerRepositoryInterface' => 'Customer\CustomerRepository',
             'Banner\BannerRepositoryInterface' => 'Banner\BannerRepository',
+            'Export\ExportRepositoryInterface' => 'Export\ExportRepository',
             'ShoppingCart\ShoppingCartRepositoryInterface' => 'ShoppingCart\ShoppingCartRepository',
         ];
         foreach ($repositories as $key=>$val){
