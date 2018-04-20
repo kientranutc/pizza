@@ -291,6 +291,10 @@ Route::group(['middleware' => ['middlewareAuth']], function(){
                 'as' => 'product-no-order.index',
                 'uses' => 'Backend\ReportController@getProductNoOrder'
             ]);
+            Route::get('/summary-report', [
+                'as' => 'summary-order.index',
+                'uses' => 'Backend\ReportController@summaryOrder'
+            ]);
         });
         Route::group(['prefix' => '/export'], function () {
             Route::get('/export-product-wish', [
@@ -301,6 +305,8 @@ Route::group(['middleware' => ['middlewareAuth']], function(){
                 'as' => 'export-product-no-order',
                 'uses' => 'Backend\ExportController@exportProductNoOrder'
             ]);
+
+
         });
 
     });

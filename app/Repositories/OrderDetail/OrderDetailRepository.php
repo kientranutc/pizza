@@ -36,16 +36,23 @@ class  OrderDetailRepository implements OrderDetailRepositoryInterface
             $orderDetail->sale = $data['sale'];
         }
         $orderDetail->save();
-
     }
 
-    public function update($id,$data)
+    /**
+     * @param $startdate
+     * @param $enđate
+     */
+    public function reportSummaryOrder($startDate, $endDate)
     {
-
+        return OrderDetail::select('order_detail.*', 'products.name as product_name', 'orders.date_order', 'orders.total')
+                ->join('products', 'products.id', '=', 'order_detail.product_id')
+                ->join('orders', 'orders.id', '=', 'order_detail.order_id')
+                ->where('orders.date_order', '>=', $startDate)
+                ->where('orders.date_order', '<=', $endDate)
+                ->get();
     }
 
-    public function delete($id)
-    {
 
-    }
+
+
 }

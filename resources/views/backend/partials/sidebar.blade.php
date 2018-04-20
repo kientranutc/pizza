@@ -83,22 +83,7 @@
 								<li><a href="register.html"><span class="submenu-label">Quản lý quyền</span></a></li>
 							</ul>
 						</li>
-						<li class="openable open">
-							<a href="#">
-								<span class="menu-icon">
-									<i class="fa fa-file-text fa-lg"></i>
-								</span>
-								<span class="text">
-									Báo cáo,thống kê
-								</span>
-								<span class="menu-hover"></span>
-							</a>
-							<ul class="submenu">
-								<li><a href="{{URL::route('product-wish.index')}}"><span class="submenu-label"></span>Sản phẩm đánh giá </a></li>
-								<li><a href="{{URL::route('product-no-order.index')}}"><span class="submenu-label"></span>Sản phẩm tồn kho </a></li>
 
-							</ul>
-						</li>
 						<li class="{{(Route::currentRouteName()=='news.index')?'active':''
 								|| (Route::currentRouteName()=='news.create')?'active':''
 								|| (Route::currentRouteName()=='news.edit')?'active':''
@@ -150,6 +135,28 @@
 								</span>
 								<span class="menu-hover"></span>
 							</a>
+						</li>
+						<li class="openable open {{(Route::currentRouteName()=='product-wish.index')
+												|| (Route::currentRouteName()=='product-no-order.index')
+												?'active':''}}
+								">
+							<a href="#">
+								<span class="menu-icon">
+									<i class="fa fa-file-text fa-lg"></i>
+								</span>
+								<span class="text">
+									Báo cáo,thống kê
+								</span>
+								<span class="menu-hover"></span>
+							</a>
+							<ul class="submenu">
+								<li class ="{{(Route::currentRouteName()=='product-wish.index')
+												?'active':''}}"><a href="{{URL::route('product-wish.index')}}"><span class="submenu-label"></span>Sản phẩm đánh giá </a></li>
+								<li {{(Route::currentRouteName()=='product-no-order.index')
+												?'active':''}}><a href="{{URL::route('product-no-order.index')}}"><span class="submenu-label"></span>Sản phẩm tồn kho </a></li>
+								<li {{(Route::currentRouteName()=='summary-order.index')
+												?'active':''}}><a href="{{URL::route('summary-order.index')}}"><span class="submenu-label"></span>Doanh thu</a></li>
+							</ul>
 						</li>
 
 					</ul>

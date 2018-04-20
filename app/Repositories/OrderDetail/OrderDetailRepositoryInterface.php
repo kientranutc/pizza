@@ -9,8 +9,6 @@ interface OrderDetailRepositoryInterface
 
     public function save($data);
 
-    public function update($id,$data);
-
-    public function delete($id);
+    public function reportSummaryOrder($startDate, $endDate);
 
 }
