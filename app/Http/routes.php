@@ -305,6 +305,10 @@ Route::group(['middleware' => ['middlewareAuth']], function(){
                 'as' => 'export-product-no-order',
                 'uses' => 'Backend\ExportController@exportProductNoOrder'
             ]);
+             Route::get('/export-summary-order', [
+                 'as' => 'export-summary-order',
+                 'uses' => 'Backend\ExportController@exportSummaryOrder'
+             ]);
 
 
         });

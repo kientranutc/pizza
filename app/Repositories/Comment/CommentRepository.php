@@ -54,4 +54,12 @@ class  CommentRepository implements CommentRepositoryInterface
                         ->orderBy('comment.created_at', 'DESC')
                         ->take($limit)->get();
     }
+    public function  countCommentDayNow()
+    {
+        $startDate = date('Y-m-d 00:00:00');
+        $endDate   = date('Y-m-d 23:59:59');
+        return Comment::where('created_at', '>=', $startDate)
+                        ->where('created_at', '<=', $endDate)
+                        ->count();
+    }
 }

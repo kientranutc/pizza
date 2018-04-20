@@ -15,4 +15,6 @@ interface OrderRepositoryInterface
 
     public function changeStatusOrder($id, $status);
 
+    public function countOrderDayNow();
+
 }

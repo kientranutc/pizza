@@ -67,4 +67,13 @@ class  OrderRepository implements OrderRepositoryInterface
     {
 
     }
+
+    public function countOrderDayNow()
+    {
+        $startDate = date('Y-m-d 00:00:00');
+        $endDate   = date('Y-m-d 23:59:59');
+        return Order::where('date_order', '>=', $startDate)
+            ->where('date_order', '<=', $endDate)
+            ->count();
+    }
 }

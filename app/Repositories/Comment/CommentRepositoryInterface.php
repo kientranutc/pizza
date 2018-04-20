@@ -12,4 +12,6 @@ interface CommentRepositoryInterface
     public function update($id, $data);
 
     public function getListComment($productId);
+
+    public function  countCommentDayNow();
 }

@@ -11,23 +11,13 @@
 					</a>
 				</div><!-- /size-toggle -->
 				<div class="user-block clearfix">
-					<img src="img/user.jpg" alt="User Avatar">
+					<img src="{{(\Auth::user()->image !='')?\Auth::user()->image:asset ('backend/img/user_not_found.jpg')}}" alt="User Avatar">
 					<div class="detail">
-						<strong>John Doe</strong><span class="badge badge-danger m-left-xs bounceIn animation-delay4">4</span>
-						<ul class="list-inline">
-							<li><a href="profile.html">Profile</a></li>
-							<li><a href="inbox.html" class="no-margin">Inbox</a></li>
-						</ul>
+						<strong>{{\Auth::user()->name}}</strong><span class="badge badge-danger m-left-xs bounceIn animation-delay4"></span>
+
 					</div>
 				</div><!-- /user-block -->
-				<div class="search-block">
-					<div class="input-group">
-						<input type="text" class="form-control input-sm" placeholder="search here...">
-						<span class="input-group-btn">
-							<button class="btn btn-default btn-sm" type="button"><i class="fa fa-search"></i></button>
-						</span>
-					</div><!-- /input-group -->
-				</div><!-- /search-block -->
+
 				<div class="main-menu">
 					<ul>
 						<li class="{{(Route::currentRouteName()=='admin.dashboard')?'active':''}}">

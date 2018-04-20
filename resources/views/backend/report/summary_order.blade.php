@@ -22,7 +22,7 @@
                     </form>
                 </div>
                 <div class="col-md-6 text-right">
-                    <a href="{{URL::route('export-product-no-order',['date' =>(Request::has('date')?Request::get('date'):-1)])}}" class="btn btn-success"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Tải file excel</a>
+                    <a href="{{URL::route('export-summary-order',['date' =>(Request::has('date')?Request::get('date'):-1)])}}" class="btn btn-success"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Tải file excel</a>
 
                 </div>
             </div>
