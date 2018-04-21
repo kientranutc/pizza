@@ -58,15 +58,7 @@ class  OrderRepository implements OrderRepositoryInterface
 
     }
 
-    public function update($id,$data)
-    {
 
-    }
-
-    public function delete($id)
-    {
-
-    }
 
     public function countOrderDayNow()
     {
@@ -75,5 +67,10 @@ class  OrderRepository implements OrderRepositoryInterface
         return Order::where('date_order', '>=', $startDate)
             ->where('date_order', '<=', $endDate)
             ->count();
+    }
+
+    public function getMoneyOrder()
+    {
+        return Order::sum('total');
     }
 }

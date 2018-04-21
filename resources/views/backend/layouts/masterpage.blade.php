@@ -87,7 +87,7 @@
 				</li>
 
 				<li class="dropdown">
-					<a class="dropdown-toggle"  href="#">
+					<a class="dropdown-toggle"  href="{{URL::route('order.index')}}">
 						<i class="fa fa-bell fa-lg" data-toggle="tooltip" title="Đơn hàng" data-toggle="dropdown" data-placement="bottom"></i>
 						<span class="notification-label bounceIn animation-delay6">{{$countOrder}}</span>
 					</a>

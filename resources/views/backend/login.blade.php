@@ -22,7 +22,7 @@
 	<div class="login-wrapper">
 		<div class="text-center">
 			<h2 class="fadeInUp animation-delay8" style="font-weight:bold">
-				<span class="text-success">Endless</span> <span style="color:#ccc; text-shadow:0 1px #fff">Admin</span>
+				<span class="text-success">Quản lý</span> <span style="color:#ccc; text-shadow:0 1px #fff">bán hàng</span>
 			</h2>
 		</div>
 		<div class="login-widget animation-delay1">
@@ -48,17 +48,17 @@
 							<input type="password" placeholder="Mật khẩu" name="password" class="form-control input-sm bounceIn animation-delay4">
 						</div>
 						<div class="form-group">
-							<label class="label-checkbox inline">
-								<input type="checkbox" class="regular-checkbox chk-delete" />
+							<label class="label-checkbox inline" id="remember">
+								<input type="checkbox" class="regular-checkbox chk-delete" id="remember"/>
 								<span class="custom-checkbox info bounceIn animation-delay4"></span>
 							</label>
-							Remember me
+							Nhớ mật khẩu
 						</div>
 
 						<div class="seperator"></div>
 						<div class="form-group">
-							Forgot your password?<br/>
-							Click <a href="#">here</a> to reset your password
+							Quên mật khẩu?<br/>
+							Click <a href="#">vào đây</a> để đặt lại mật khẩu
 						</div>
 
 						<hr/>

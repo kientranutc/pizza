@@ -220,10 +220,12 @@ Route::group(['middleware' => ['middlewareAuth']], function(){
                 'as' => 'news.create',
                 'uses' => 'Backend\NewsController@processCreate'
             ]);
-            Route::get('/delete/{id}', [
-                'as' => 'news.delete',
-                'uses' => 'Backend\NewsController@delete'
-            ]);
+            Route::group(['middleware' => ['middlewareCheckRoleDelte']], function() {
+                Route::get('/delete/{id}', [
+                    'as' => 'news.delete',
+                    'uses' => 'Backend\NewsController@delete'
+                ]);
+            });
             Route::get('/edit/{id}', [
                 'as' => 'news.edit',
                 'uses' => 'Backend\NewsController@edit'
@@ -271,10 +273,12 @@ Route::group(['middleware' => ['middlewareAuth']], function(){
                 'as' => 'banner.edit',
                 'uses' => 'Backend\BannerController@processEdit'
             ]);
-            Route::get('/delete/{id}', [
-                'as' => 'banner.delete',
-                'uses' => 'Backend\BannerController@delete'
-            ]);
+            Route::group(['middleware' => ['middlewareCheckRoleDelte']], function() {
+                Route::get('/delete/{id}', [
+                    'as' => 'banner.delete',
+                    'uses' => 'Backend\BannerController@delete'
+                ]);
+            });
         });
         Route::group(['prefix' => '/customer'], function () {
             Route::get('', [

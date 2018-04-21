@@ -45,12 +45,14 @@ class ViewDataComposers
         $dataBanner = $this->banner->getBannerActive();
         $countCommentDayNow = $this->comment->countCommentDayNow ();
         $countOrderDayNow = $this->order->countOrderDayNow ();
+        $moneyOrder = $this->order->getMoneyOrder();
         $view->with(
             [
                 'category'=> $dataCategory,
                 'banner' => $dataBanner,
                 'countComment' => $countCommentDayNow,
-                'countOrder' => $countOrderDayNow
+                'countOrder' => $countOrderDayNow,
+                'moneyOrder' => $moneyOrder
 
             ]);
 

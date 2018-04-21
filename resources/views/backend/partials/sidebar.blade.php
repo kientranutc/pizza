@@ -37,7 +37,7 @@
        						}}">
 							<a href="{{URL::route('category.index')}}">
 								<span class="menu-icon">
-									<i class="fa fa-desktop fa-lg"></i>
+									<i class="fa fa-bars fa-lg"></i>
 								</span>
 								<span class="text">
 									Danh mục
@@ -45,12 +45,14 @@
 								<span class="menu-hover"></span>
 							</a>
 						</li>
-						<li class="{{(Route::currentRouteName()=='product.index')?'active':''
-								|| (Route::currentRouteName()=='product.create')?'active':''
+						<li class="{{(Route::currentRouteName()=='product.index')
+								|| (Route::currentRouteName()=='product.create')
+								|| (Route::currentRouteName()=='product.edit')
+								?'active':''
        						}}">
 							<a href="{{URL::route('product.index')}}">
 								<span class="menu-icon">
-									<i class="fa fa-desktop fa-lg"></i>
+									<i class="fa fa-product-hunt fa-lg"></i>
 								</span>
 								<span class="text">
 									Sản phẩm
@@ -58,21 +60,7 @@
 								<span class="menu-hover"></span>
 							</a>
 						</li>
-						<li class="openable open">
-							<a href="#">
-								<span class="menu-icon">
-									<i class="fa fa-file-text fa-lg"></i>
-								</span>
-								<span class="text">
-									Quản lý người dùng
-								</span>
-								<span class="menu-hover"></span>
-							</a>
-							<ul class="submenu">
-								<li><a href="{{URL::route('user.index')}}"><span class="submenu-label"></span>Quản lý user </a></li>
-								<li><a href="register.html"><span class="submenu-label">Quản lý quyền</span></a></li>
-							</ul>
-						</li>
+
 
 						<li class="{{(Route::currentRouteName()=='news.index')?'active':''
 								|| (Route::currentRouteName()=='news.create')?'active':''
@@ -80,7 +68,7 @@
        						}}">
 							<a href="{{URL::route('news.index')}}">
 								<span class="menu-icon">
-									<i class="fa fa-desktop fa-lg"></i>
+									<i class="fa fa-newspaper-o fa-lg"></i>
 								</span>
 								<span class="text">
 									Dịch vụ
@@ -93,7 +81,7 @@
        						}}">
 							<a href="{{URL::route('order.index')}}">
 								<span class="menu-icon">
-									<i class="fa fa-desktop fa-lg"></i>
+									<i class="fa fa-shopping-cart fa-lg"></i>
 								</span>
 								<span class="text">
 									Quản lý đơn hàng
@@ -107,7 +95,7 @@
        						}}">
 							<a href="{{URL::route('banner.index')}}">
 								<span class="menu-icon">
-									<i class="fa fa-desktop fa-lg"></i>
+									<i class="fa fa-slideshare fa-lg"></i>
 								</span>
 								<span class="text">
 									Quản lý banner
@@ -118,7 +106,7 @@
 						<li class="{{(Route::currentRouteName()=='customer.index')?'active':''}}">
 							<a href="{{URL::route('customer.index')}}">
 								<span class="menu-icon">
-									<i class="fa fa-desktop fa-lg"></i>
+									<i class="fa fa-key fa-lg"></i>
 								</span>
 								<span class="text">
 									Tài khoản khách hàng
@@ -128,6 +116,7 @@
 						</li>
 						<li class="openable open {{(Route::currentRouteName()=='product-wish.index')
 												|| (Route::currentRouteName()=='product-no-order.index')
+												|| (Route::currentRouteName()=='summary-order.index')
 												?'active':''}}
 								">
 							<a href="#">
@@ -142,10 +131,25 @@
 							<ul class="submenu">
 								<li class ="{{(Route::currentRouteName()=='product-wish.index')
 												?'active':''}}"><a href="{{URL::route('product-wish.index')}}"><span class="submenu-label"></span>Sản phẩm đánh giá </a></li>
-								<li {{(Route::currentRouteName()=='product-no-order.index')
-												?'active':''}}><a href="{{URL::route('product-no-order.index')}}"><span class="submenu-label"></span>Sản phẩm tồn kho </a></li>
-								<li {{(Route::currentRouteName()=='summary-order.index')
-												?'active':''}}><a href="{{URL::route('summary-order.index')}}"><span class="submenu-label"></span>Doanh thu</a></li>
+								<li  class="{{(Route::currentRouteName()=='product-no-order.index')
+												?'active':''}}"><a href="{{URL::route('product-no-order.index')}}"><span class="submenu-label"></span>Sản phẩm tồn kho </a></li>
+								<li class="{{(Route::currentRouteName()=='summary-order.index')
+												?'active':''}}"><a href="{{URL::route('summary-order.index')}}"><span class="submenu-label"></span>Doanh thu</a></li>
+							</ul>
+						</li>
+						<li class="openable open">
+							<a href="#">
+								<span class="menu-icon">
+									<i class="fa fa-user fa-lg"></i>
+								</span>
+								<span class="text">
+									Quản lý người dùng
+								</span>
+								<span class="menu-hover"></span>
+							</a>
+							<ul class="submenu">
+								<li><a href="{{URL::route('user.index')}}"><span class="submenu-label"></span>Quản lý user </a></li>
+								<li><a href="register.html"><span class="submenu-label">Quản lý quyền</span></a></li>
 							</ul>
 						</li>
 

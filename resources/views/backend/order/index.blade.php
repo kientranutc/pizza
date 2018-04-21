@@ -43,8 +43,10 @@
                             </td>
                             <td class="text-center">{{$item->user_update}}</td>
                             <td class="text-center">
+                                @if($item->status==0)
+                                    <a href="{{URL::route('order.change-status',[$item->id, $item->status])}}" data-toggle="tooltip" title="Cập nhật" class="btn btn-success"><i class="fa fa-edit fa-lg"></i></a>
+                                @endif
                                 <a href="" data-toggle="tooltip" data-id="{{$item->id}}" title="Xem chi tiết" class="btn btn-success show-order-detail"><i class="fa fa-eye fa-lg"></i></a>
-                                <a href="{{URL::route('order.change-status',[$item->id, $item->status])}}" data-toggle="tooltip" title="Cập nhật" class="btn btn-success"><i class="fa fa-edit fa-lg"></i></a>
                             </td>
                         </tr>
                     @empty

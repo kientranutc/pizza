@@ -48,7 +48,7 @@
                             <td class="text-center">{{$item->fullname}}</td>
                             <td class="text-center">{{$item->created_at}}</td>
                             <td class="text-center">
-                                <a href="{{URL::route('category.edit',$item->id)}}" data-toggle="tooltip" title="Xem chi tiết" class="btn btn-success"><i class="fa fa-eye fa-lg"></i></a>
+                                <a href="{{URL::route('product', $item->slug)}}" target="_blank" data-toggle="tooltip" title="Xem chi tiết" class="btn btn-success"><i class="fa fa-eye fa-lg"></i></a>
                                 <a href="{{URL::route('product.edit',$item->id)}}" data-toggle="tooltip" title="Cập nhật" class="btn btn-success"><i class="fa fa-edit fa-lg"></i></a>
                                 <a href="{{URL::route('product.delete',$item->id)}}" data-toggle="tooltip" title="Xóa" data-toggle="modal"  class="btn btn-danger delete-view"><i class="fa fa-trash-o fa-lg"></i></a>
                             </td>
