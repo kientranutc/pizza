@@ -120,8 +120,9 @@
                     <!--CREDIT CART PAYMENT END-->
                 </div>
                 <div class="row cart-footer text-center">
-                    <button type="submit" class="btn btn-success">Thanh toán</button>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Thanh toán</button>
                 </div>
+                <br>
             </form>
         </div>
 

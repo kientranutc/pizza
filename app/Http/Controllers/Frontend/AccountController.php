@@ -65,9 +65,9 @@ class AccountController extends Controller
                 'address' => $dataLogin->address,
                 'phone' => $dataLogin->phone
             ]]);
-            return redirect()->back();
+            return redirect()->back()->with('success', 'Bạn đăng nhập thành công');
         } else {
-            return redirect()->back();
+            return redirect()->back()->withErrors('Lỗi đăng nhập');
         }
     }
 

@@ -20,12 +20,6 @@ class HomeController extends Controller
 
     public function  index()
     {
-//        $email ="kienkienutc95@gmail.com";
-//        Mail::send('email.reset',
-//            compact('email'), function($m) use ($email)
-//            {
-//                $m->to($email)->subject('Quên mật khẩu');
-//            });
         $productWish = $this->product->getListWish(1);
         $saleService = $this->news->getService(1,4)->toArray();
         return view('frontend.home', compact('productWish', 'saleService'));

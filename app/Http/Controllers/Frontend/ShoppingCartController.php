@@ -8,6 +8,7 @@ use App\Repositories\OrderDetail\OrderDetailRepositoryInterface;
 use App\Repositories\ShoppingCart\ShoppingCartRepositoryInterface;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -69,6 +70,9 @@ class ShoppingCartController extends Controller
     {
         $requestCustomer =$request->except(['_token', 'note']);
         $customerId = $request->get('customer_id');
+        $dataOrder = $this->cart->showCart();
+        $email =$request->get('email');
+        $stt=0;
         //check have been logined or not login
         if ($customerId != null) {
             $checkExistCustomer = $this->customer->find($customerId);
@@ -90,8 +94,14 @@ class ShoppingCartController extends Controller
                             'sale' => $item->options->sale
                         ]);
                     }
+                    Mail::send('email.order',
+                        compact('stt','dataOrder'), function($m) use ($email)
+                        {
+                            $m->to($email)->subject('Đơn hàng tại cửa hàng pizza');
+                        });
+
+                    return view('frontend.thank_order')->with('success', 'Bạn đã thanh toán thành công');
                     \Cart::destroy();
-                    return redirect()->back()->with('success', 'Bạn đã thanh toán thành công');
                 }
 
             } else {
@@ -118,8 +128,15 @@ class ShoppingCartController extends Controller
                             'sale' => $item->options->sale
                         ]);
                     }
+                    Mail::send('email.order',
+                        compact('stt','dataOrder'), function($m) use ($email)
+                        {
+                            $m->to($email)->subject('Đơn hàng tại cửa hàng pizza');
+                        });
                     \Cart::destroy();
-                    return redirect()->back()->with('success', 'Bạn đã thanh toán thành công');
+                    return view('frontend.thank_order')->with('success', 'Bạn đã thanh toán thành công');
+
+
                 }
             }
 
