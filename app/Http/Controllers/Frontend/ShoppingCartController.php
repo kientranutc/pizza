@@ -99,9 +99,9 @@ class ShoppingCartController extends Controller
                         {
                             $m->to($email)->subject('Đơn hàng tại cửa hàng pizza');
                         });
-
-                    return view('frontend.thank_order')->with('success', 'Bạn đã thanh toán thành công');
                     \Cart::destroy();
+                    return view('frontend.thank_order')->with('success', 'Bạn đã thanh toán thành công');
+
                 }
 
             } else {

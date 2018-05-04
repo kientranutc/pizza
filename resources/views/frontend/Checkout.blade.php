@@ -86,22 +86,22 @@
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Họ tên <span class="text-danger">*</span>:</strong></div>
                                 <div class="col-md-12">
-                                    <input type="text" placeholder="Họ tên" class="form-control" name="fullname" value="{{(session()->has('login-customer'))?session('login-customer')['fullname']:''}}" />
+                                    <input type="text" required placeholder="Họ tên" class="form-control" name="fullname" value="{{(session()->has('login-customer'))?session('login-customer')['fullname']:''}}" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Số điện thoại<span class="text-danger">*</span>:</strong></div>
-                                <div class="col-md-12"><input type="text" placeholder="Số điện thoại" name="phone" class="form-control" value="{{(session()->has('login-customer'))?session('login-customer')['phone']:''}}" /></div>
+                                <div class="col-md-12"><input required type="text" placeholder="Số điện thoại" name="phone" class="form-control" value="{{(session()->has('login-customer'))?session('login-customer')['phone']:''}}" /></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Hộp thư<span class="text-danger">*</span>:</strong></div>
-                                <div class="col-md-12"><input type="email" placeholder="Hộp thư" name="email" class="form-control" value="{{(session()->has('login-customer'))?session('login-customer')['email']:''}}" /></div>
+                                <div class="col-md-12"><input required type="email" placeholder="Hộp thư" name="email" class="form-control" value="{{(session()->has('login-customer'))?session('login-customer')['email']:''}}" /></div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Địa chỉ<span class="text-danger">*</span>:</strong></div>
                                 <div class="col-md-12">
-                                    <input type="text" name="address" placeholder="Địa chỉ" class="form-control" value="{{(session()->has('login-customer'))?session('login-customer')['address']:''}}" />
+                                    <input type="text" required name="address" placeholder="Địa chỉ" class="form-control" value="{{(session()->has('login-customer'))?session('login-customer')['address']:''}}" />
                                 </div>
                             </div>
                             <div class="form-group">
