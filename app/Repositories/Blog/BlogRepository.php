@@ -105,4 +105,10 @@ class  BlogRepository implements BlogRepositoryInterface
                     ->orderBy('created_at', 'DESC')
                     ->paginate($limit);
     }
+
+    public function findAttribute($att, $value)
+    {
+        return Blog::where($att, $value)->first();
+    }
+
 }

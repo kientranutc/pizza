@@ -15,7 +15,7 @@ interface BlogRepositoryInterface
 
     public function checkNameExist($id,$name);
 
-
+    public function findAttribute($att, $value);
 
     public function  getBlogActive();
 

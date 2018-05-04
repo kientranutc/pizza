@@ -19,4 +19,6 @@ interface NewsRepositoryInterface
 
     public function  getNewsActive();
 
+    public function findAttribute($att, $value);
+
 }

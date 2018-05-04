@@ -16,13 +16,13 @@
         <div class="index-content">
             <div class="container">
                 @forelse($dataService as $item)
-                <a href="blog-ici.html">
+                <a href="{{URL::route('service-detail',[Request::get('type',1),$item->slug])}}">
                     <div class="col-lg-4">
                         <div class="card">
                             <img src="{{$item->image}}">
                             <h4>{{$item->title}}</h4>
                             <p>{!! str_limit($item->description,100,' ') !!}</p>
-                            <a href="blog-ici.html" class="blue-button">Xem thêm</a>
+                            <a href="{{URL::route('service-detail',[Request::get('type',1),$item->slug])}}" class="blue-button">Xem thêm</a>
                         </div>
                     </div>
                 </a>

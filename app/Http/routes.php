@@ -43,6 +43,10 @@ Route::get('/service.html',[
     'as' => 'service',
     'uses' => 'Frontend\ServiceController@index'
 ]);
+Route::get('/service/{type}-{slug}.html',[
+    'as' => 'service-detail',
+    'uses' => 'Frontend\ServiceController@showDetail'
+]);
 Route::group(['prefix' => 'shopping'], function () {
     Route::get('/add-cart',[
         'as' => 'add-cart',

@@ -18,10 +18,13 @@ class ServiceController extends Controller
         $this->blog = $blog;
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function  index(Request $request)
     {
         $type = $request->get('type');
-        $dataService = [];
         if ($type == 1) {
             $dataService = $this->news->getNewsActive();
         } else {
@@ -30,4 +33,16 @@ class ServiceController extends Controller
 
         return view('frontend.service', compact('dataService'));
     }
+
+    public function showDetail($type, $slug)
+    {
+        if ($type == 1) {
+            $dataServiceDetail = $this->news->findAttribute('slug', $slug);
+        } else {
+            $dataServiceDetail = $this->blog->findAttribute('slug', $slug);
+        }
+        return view('frontend.service_detail', compact('type', 'dataServiceDetail'));
+    }
+
+
 }

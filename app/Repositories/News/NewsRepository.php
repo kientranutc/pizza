@@ -108,4 +108,9 @@ class  NewsRepository implements NewsRepositoryInterface
                     ->orderBy('created_at', 'DESC')
                     ->paginate($limit);
     }
+
+    public function findAttribute($att, $value)
+    {
+        return News::where($att, $value)->first();
+    }
 }
