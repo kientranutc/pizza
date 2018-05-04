@@ -52,22 +52,22 @@
             <div class="carousel-product">
 
                 <div class="carousel-product__item carousel-product__item--huge  ">
-                    <a href="javascript:;" title="{{$saleService[0]['title']}}">
-                        <img src="{{$saleService[0]['image']}}" alt="{{$saleService[0]['image']}}" class="carousel-product__img">
+                    <a href="javascript:;" title="{{isset($saleService[0]['image'])?$saleService[0]['image']:''}}">
+                        <img src="{{isset($saleService[0]['image'])?$saleService[1]['image']:''}}" alt="{{isset($saleService[0]['image'])?$saleService[0]['image']:''}}" class="carousel-product__img">
                     </a>
                 </div>
                 <div class="carousel-product__item  carousel-product__item--small  ">
-                    <a href="javascript:;" title="{{$saleService[1]['title']}}">
-                        <img src="{{$saleService[1]['image']}}" alt="{{$saleService[1]['image']}}" class="carousel-product__img">
+                    <a href="javascript:;" title="{{isset($saleService[1]['image'])?$saleService[1]['image']:''}}">
+                        <img src="{{isset($saleService[1]['image'])?$saleService[1]['image']:''}}" alt="{{isset($saleService[1]['image'])?$saleService[1]['image']:''}}" class="carousel-product__img">
                     </a>
                 </div>
                 <div class="carousel-product__item  carousel-product__item--small  ">
-                    <a href="javascript:;" title="{{$saleService[2]['title']}}">
-                        <img src="{{$saleService[2]['image']}}" alt="{{$saleService[2]['image']}}" class="carousel-product__img">
+                    <a href="javascript:;" title="{{isset($saleService[2]['image'])?$saleService[2]['image']:''}}">
+                        <img src="{{isset($saleService[2]['image'])?$saleService[2]['image']:''}}" alt="{{isset($saleService[2]['image'])?$saleService[2]['image']:''}}" class="carousel-product__img">
                     </a>
                 </div>
                 <div class="carousel-product__item  carousel-product__item--medium  ">
-                    <a href="javascript:;" title="{{$saleService[3]['title']}}"><img src="{{$saleService[3]['image']}}" alt="{{$saleService[3]['image']}}" class="carousel-product__img">
+                    <a href="javascript:;" title="{{isset($saleService[3]['image'])?$saleService[3]['image']:''}}"><img src="{{isset($saleService[3]['image'])?$saleService[3]['image']:''}}" alt="{{isset($saleService[3]['image'])?$saleService[3]['image']:''}}" class="carousel-product__img">
 
                     </a>
                 </div>

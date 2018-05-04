@@ -19,9 +19,9 @@
                         <th width="10%" class="text-center">Ngày đặt hàng</th>
                         <th width="20%" class="text-center">Địa chỉ khách hàng</th>
                         <th width="10%" class="text-center">Số điện thoại</th>
+                        <th width="10%" class="text-center">Ghi chú</th>
                         <th width="10%" class="text-center">Tổng tiền</th>
                         <th width="10%" class="text-center">Trạng thái</th>
-                        <th width="10%" class="text-center">Người cập nhật</th>
                         <th width="15%" class="text-center"></th>
                     </tr>
                     </thead>
@@ -33,6 +33,7 @@
                             <td class="text-center">{{$item->date_order}}</td>
                             <td class="text-center">{{$item->customer_address}}</td>
                             <td class="text-center"><a href="tel:{{$item->customer_phone}}" class="btn btn-success btn-sm"> <i class="fa fa-phone fa-lg"></i> {{$item->customer_phone}}</a></td>
+                            <td class="text-center">{{$item->note}}</td>
                             <td class="text-center">{{number_format($item->total).' đ'}}</td>
                             <td class="text-center">
                                 @if($item->status==1)
@@ -41,7 +42,6 @@
                                     <span class="btn btn-danger btn-sm">Mới đặt hàng</span>
                                 @endif
                             </td>
-                            <td class="text-center">{{$item->user_update}}</td>
                             <td class="text-center">
                                 @if($item->status==0)
                                     <a href="{{URL::route('order.change-status',[$item->id, $item->status])}}" data-toggle="tooltip" title="Cập nhật" class="btn btn-success"><i class="fa fa-edit fa-lg"></i></a>

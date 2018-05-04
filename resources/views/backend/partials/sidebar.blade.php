@@ -115,7 +115,7 @@
 							</a>
 						</li>
 						<li class="openable open {{(Route::currentRouteName()=='product-wish.index')
-												|| (Route::currentRouteName()=='product-no-order.index')
+
 												|| (Route::currentRouteName()=='summary-order.index')
 												?'active':''}}
 								">
@@ -131,8 +131,7 @@
 							<ul class="submenu">
 								<li class ="{{(Route::currentRouteName()=='product-wish.index')
 												?'active':''}}"><a href="{{URL::route('product-wish.index')}}"><span class="submenu-label"></span>Sản phẩm đánh giá </a></li>
-								<li  class="{{(Route::currentRouteName()=='product-no-order.index')
-												?'active':''}}"><a href="{{URL::route('product-no-order.index')}}"><span class="submenu-label"></span>Sản phẩm tồn kho </a></li>
+
 								<li class="{{(Route::currentRouteName()=='summary-order.index')
 												?'active':''}}"><a href="{{URL::route('summary-order.index')}}"><span class="submenu-label"></span>Doanh thu</a></li>
 							</ul>
