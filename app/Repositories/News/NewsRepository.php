@@ -40,9 +40,6 @@ class  NewsRepository implements NewsRepositoryInterface
         } else {
             $news->description = '';
         }
-        if (isset($data['type_id'])) {
-            $news->type_id = $data['type_id'];
-        }
         $news->user_create = Auth::user()->name;
         $news->save();
     }
@@ -73,9 +70,7 @@ class  NewsRepository implements NewsRepositoryInterface
             } else {
                 $news->description = '';
             }
-            if (isset($data['type_id'])) {
-                $news->type_id = $data['type_id'];
-            }
+
             $news->user_update = Auth::user()->name;
             return $news->save();
         } else {

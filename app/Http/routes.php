@@ -235,7 +235,37 @@ Route::group(['middleware' => ['middlewareAuth']], function(){
                 'uses' => 'Backend\NewsController@processEdit'
             ]);
         });
-        //-------------------news---------------------------------
+        //-------------------blog---------------------------------
+        Route::group(['prefix' => '/blog'], function () {
+            Route::get('', [
+                'as' => 'blog.index',
+                'uses' => 'Backend\BlogController@index'
+            ]);
+            Route::get('/create', [
+                'as' => 'blog.create',
+                'uses' => 'Backend\BlogController@create'
+            ]);
+            Route::post('/create', [
+                'as' => 'blog.create',
+                'uses' => 'Backend\BlogController@processCreate'
+            ]);
+            Route::group(['middleware' => ['middlewareCheckRoleDelte']], function() {
+                Route::get('/delete/{id}', [
+                    'as' => 'blog.delete',
+                    'uses' => 'Backend\BlogController@delete'
+                ]);
+            });
+            Route::get('/edit/{id}', [
+                'as' => 'blog.edit',
+                'uses' => 'Backend\BlogController@edit'
+            ]);
+            Route::post('/edit/{id}', [
+                'as' => 'blog.edit',
+                'uses' => 'Backend\BlogController@processEdit'
+            ]);
+        });
+
+        //-------------------order---------------------------------
         Route::group(['prefix' => '/order'], function () {
             Route::get('', [
                 'as' => 'order.index',

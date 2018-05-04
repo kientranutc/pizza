@@ -45,7 +45,7 @@ class NewsController extends Controller
     public function processCreate(Requests\CreateNewsRequest $request)
     {
         $this->news->save( $request->except('_token'));
-        return redirect()->route('news.index')->with('success','Thêm mới dịch vụ thành công!');
+        return redirect()->route('news.index')->with('success','Thêm mới khuyến mại thành công!');
     }
 
     /**
@@ -57,15 +57,21 @@ class NewsController extends Controller
         $data = $this->news->find($id);
         return view('backend.news.edit', compact('data'));
     }
+
+    /**
+     * @param $id
+     * @param Requests\UpdateNewsRequest $request
+     * @return $this|\Illuminate\Http\RedirectResponse
+     */
     public function processEdit($id, Requests\UpdateNewsRequest $request)
     {
         if ($this->news->checkNameExist($id, $request->get('title'))>0) {
-            return redirect()->back()->withErrors('Tên dịch vụ đã tồn tại!');
+            return redirect()->back()->withErrors('Tiêu đề khuyến mại đã tồn tại!');
         } else {
             if ($this->news->update($id, $request->except('_token'))) {
-                return redirect()->route('news.index')->with('success','Cập nhật dịch vụ thành công!');
+                return redirect()->route('news.index')->with('success','Cập nhật khuyến mại thành công!');
             } else {
-                return redirect()->back()->withErrors('Lỗi cập nhật dịch vụ!');
+                return redirect()->back()->withErrors('Lỗi cập nhật khuyến mại!');
             }
         }
     }
@@ -76,9 +82,9 @@ class NewsController extends Controller
     public function delete($id)
     {
         if ($this->news->delete($id)) {
-            return redirect()->route('news.index')->with('success','Xóa dịch vụ thành công!');
+            return redirect()->route('news.index')->with('success','Xóa tin khuyến mại thành công!');
         } else {
-            return redirect()->route('news.index')->withErrors('Lỗi xóa dịch vụ!');
+            return redirect()->route('news.index')->withErrors('Lỗi xóa tin khuyến mại!');
         }
     }
 }

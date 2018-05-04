@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Repositories\News\NewsRepositoryInterface;
+use App\Repositories\News\BlogRepositoryInterface;
 use App\Repositories\Products\ProductRepositoryInterface;
 use Illuminate\Http\Request;
 
@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
-    public function __construct(ProductRepositoryInterface $product, NewsRepositoryInterface $news)
+    public function __construct(ProductRepositoryInterface $product, BlogRepositoryInterface $news)
     {
         $this->product = $product;
         $this->news = $news;

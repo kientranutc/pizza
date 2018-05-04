@@ -51,13 +51,10 @@ class ShoppingCartController extends Controller
 
     public function listOrder()
     {
-        if (\Cart::count()>0) {
             $dataOrder = $this->cart->showCart();
             $stt = 0;
             return view('frontend.list_order', compact('stt','dataOrder'));
-        } else {
-            return redirect('/');
-        }
+
     }
 
     public function checkout()

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class UpdateNewsRequest extends Request
+class UpdateBlogRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.

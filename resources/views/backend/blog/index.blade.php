@@ -1,16 +1,16 @@
 @extends('backend.layouts.masterpage')
 @section('title', 'khuyến mại')
 @section('breadcrumb')
-    Khuyến mại
+    Blog
 @stop
 @section('content')
     <div class="panel panel-default">
         <div class="panel-heading clearfix">
-            <a href="{{URL::route('news.create')}}" class="btn btn-success">Thêm mới</a>
+            <a href="{{URL::route('blog.create')}}" class="btn btn-success">Thêm mới</a>
         </div><!-- /page-title -->
         <div class="panel panel-default table-responsive">
             <div class="panel-heading">
-                Khuyến mại
+                Blog
             </div>
             <div class="padding-md clearfix">
                 <table class="table table-striped table-bordered" id="dataTable">
@@ -46,8 +46,8 @@
                             <td class="text-center">{{$item->updated_at}}</td>
                             <td class="text-center">
                                 <a href="{{URL::route('category.edit',$item->id)}}" data-toggle="tooltip" title="Xem chi tiết" class="btn btn-success"><i class="fa fa-eye fa-lg"></i></a>
-                                <a href="{{URL::route('news.edit',$item->id)}}" data-toggle="tooltip" title="Cập nhật" class="btn btn-success"><i class="fa fa-edit fa-lg"></i></a>
-                                <a href="{{URL::route('news.delete',$item->id)}}" data-toggle="tooltip" title="Xóa" data-toggle="modal"  class="btn btn-danger delete-view"><i class="fa fa-trash-o fa-lg"></i></a>
+                                <a href="{{URL::route('blog.edit',$item->id)}}" data-toggle="tooltip" title="Cập nhật" class="btn btn-success"><i class="fa fa-edit fa-lg"></i></a>
+                                <a href="{{URL::route('blog.delete',$item->id)}}" data-toggle="tooltip" title="Xóa" data-toggle="modal"  class="btn btn-danger delete-view"><i class="fa fa-trash-o fa-lg"></i></a>
                             </td>
                         </tr>
                     @empty

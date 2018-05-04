@@ -24,9 +24,8 @@ class CreateNewsRequest extends Request
     public function rules()
     {
         return [
-            'title' => 'required|unique:news|max:255',
+            'title' => 'required|unique:news_sale|max:255',
             'image' => 'required|max:255',
-            'type_id' =>'required|not_in:0'
         ];
     }
     public function messages()
@@ -37,8 +36,6 @@ class CreateNewsRequest extends Request
             'title.max'  => 'Tên dịch vụ vượt quá 255 ký tự',
             'image.required' => 'Ảnh sản phẩm cần nhập',
             'image.max'  => 'Độ dài đường dẫn ảnh dịch vụ vượt quá 255 ký tự',
-            'type_id.required' => 'Loại dịch vụ cần nhập',
-            'type_id.not_in' => 'Bạn chưa chọn loại dịch vụ sản phẩm'
         ];
     }
 }

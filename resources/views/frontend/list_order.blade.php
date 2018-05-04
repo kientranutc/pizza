@@ -47,7 +47,9 @@
                 </tbody>
             </table>
             <div class="btn-checkout text-right">
-                <a href="{{URL::route('check-out')}}" class="btn btn-success">Thanh toán</a>
+                @if (\Cart::count()>0)
+                    <a href="{{URL::route('check-out')}}" class="btn btn-success">Thanh toán</a>
+                @endif
             </div>
         </div>
     </div>
