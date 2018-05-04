@@ -15,8 +15,8 @@ interface NewsRepositoryInterface
 
     public function checkNameExist($id,$name);
 
-    public function getService($flag, $limit);
+    public function getService($limit);
 
-    public function  getServiceForType($type);
+    public function  getNewsActive();
 
 }

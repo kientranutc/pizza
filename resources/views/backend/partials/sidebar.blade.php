@@ -71,7 +71,21 @@
 									<i class="fa fa-newspaper-o fa-lg"></i>
 								</span>
 								<span class="text">
-									Dịch vụ
+									Khuyến mại
+								</span>
+								<span class="menu-hover"></span>
+							</a>
+						</li>
+						<li class="{{(Route::currentRouteName()=='blog.index')?'active':''
+								|| (Route::currentRouteName()=='blog.create')?'active':''
+								|| (Route::currentRouteName()=='blog.edit')?'active':''
+       						}}">
+							<a href="{{URL::route('blog.index')}}">
+								<span class="menu-icon">
+									<i class="fa fa-newspaper-o fa-lg"></i>
+								</span>
+								<span class="text">
+									Blog
 								</span>
 								<span class="menu-hover"></span>
 							</a>

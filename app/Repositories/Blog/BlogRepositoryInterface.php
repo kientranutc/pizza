@@ -17,6 +17,6 @@ interface BlogRepositoryInterface
 
 
 
-    public function  getServiceForType($type);
+    public function  getBlogActive();
 
 }

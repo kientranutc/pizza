@@ -1,5 +1,5 @@
 @extends('backend.layouts.masterpage')
-@section('title', 'khuyến mại')
+@section('title', 'blog')
 @section('breadcrumb')
     Blog
 @stop

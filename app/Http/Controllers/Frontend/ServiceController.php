@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Repositories\News\BlogRepositoryInterface;
+use App\Models\Blog;
+use App\Repositories\Blog\BlogRepositoryInterface;
+use App\Repositories\News\NewsRepositoryInterface;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -10,15 +12,22 @@ use App\Http\Controllers\Controller;
 
 class ServiceController extends Controller
 {
-    public function  __construct(BlogRepositoryInterface $news)
+    public function  __construct(NewsRepositoryInterface $news, BlogRepositoryInterface $blog)
     {
         $this->news = $news;
+        $this->blog = $blog;
     }
 
     public function  index(Request $request)
     {
         $type = $request->get('type');
-        $dataService = $this->news->getServiceForType($type);
+        $dataService = [];
+        if ($type == 1) {
+            $dataService = $this->news->getNewsActive();
+        } else {
+            $dataService = $this->blog->getBlogActive();
+        }
+
         return view('frontend.service', compact('dataService'));
     }
 }

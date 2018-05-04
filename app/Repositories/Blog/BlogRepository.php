@@ -98,11 +98,10 @@ class  BlogRepository implements BlogRepositoryInterface
     }
 
 
-    public function  getServiceForType($type)
+    public function  getBlogActive()
     {
         $limit = 20;
-        return News::where('status',1)
-                    ->where('type_id', $type)
+        return Blog::where('status',1)
                     ->orderBy('created_at', 'DESC')
                     ->paginate($limit);
     }

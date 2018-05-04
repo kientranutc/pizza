@@ -96,17 +96,15 @@ class  NewsRepository implements NewsRepositoryInterface
             ->count();
     }
 
-    public function getService($flag,$limit)
+    public function getService($limit)
     {
-        return News::where('type_id',$flag)
-                    ->where('status', 1)
+        return News::where('status', 1)
                     ->take($limit)->get();
     }
-    public function  getServiceForType($type)
+    public function  getNewsActive()
     {
         $limit = 20;
         return News::where('status',1)
-                    ->where('type_id', $type)
                     ->orderBy('created_at', 'DESC')
                     ->paginate($limit);
     }

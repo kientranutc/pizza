@@ -53,7 +53,7 @@
 
                 <div class="carousel-product__item carousel-product__item--huge  ">
                     <a href="javascript:;" title="{{isset($saleService[0]['image'])?$saleService[0]['image']:''}}">
-                        <img src="{{isset($saleService[0]['image'])?$saleService[1]['image']:''}}" alt="{{isset($saleService[0]['image'])?$saleService[0]['image']:''}}" class="carousel-product__img">
+                        <img src="{{isset($saleService[0]['image'])?$saleService[0]['image']:''}}" alt="{{isset($saleService[0]['image'])?$saleService[0]['image']:''}}" class="carousel-product__img">
                     </a>
                 </div>
                 <div class="carousel-product__item  carousel-product__item--small  ">
