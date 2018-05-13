@@ -43,7 +43,15 @@
             <td colspan="3">Dữ liệu trống</td>
         </tr>
     @endforelse
+    <tr>
+
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+        <td colspan="2">Người tạo: <b>{{Auth::user()->fullname}}</b></td>
+    </tr>
     </tbody>
 </table>
+
 </body>
 </html>

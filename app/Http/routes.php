@@ -347,6 +347,10 @@ Route::group(['middleware' => ['middlewareAuth']], function(){
                  'as' => 'export-summary-order',
                  'uses' => 'Backend\ExportController@exportSummaryOrder'
              ]);
+            Route::get('/export-order/{id}', [
+                'as' => 'export-order',
+                'uses' => 'Backend\ExportController@exportOrder'
+            ]);
 
 
         });

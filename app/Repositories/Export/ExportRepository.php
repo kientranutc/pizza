@@ -42,4 +42,22 @@ class  ExportRepository implements ExportRepositoryInterface
             });
         })->export('xls');
     }
+
+    public function  exportOrder($time, $data, $viewName)
+    {
+        $dateExport = Carbon::now()->toDateTimeString();
+        \Excel::create($dateExport.'_order', function($excel) use($time, $data, $viewName) {
+            $excel->sheet('order', function($sheet) use($time, $data, $viewName) {
+                $sheet->setSize(array(
+                    'A' => array(
+                        'width'     => 50,
+                    )
+                ));
+                $sheet->loadView($viewName,[
+                    'data' => $data,
+                    'time' => $time
+                ]);
+            });
+        })->export('xls');
+    }
 }

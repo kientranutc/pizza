@@ -46,7 +46,8 @@
                                 @if($item->status==0)
                                     <a href="{{URL::route('order.change-status',[$item->id, $item->status])}}" data-toggle="tooltip" title="Cập nhật" class="btn btn-success"><i class="fa fa-edit fa-lg"></i></a>
                                 @endif
-                                <a href="" data-toggle="tooltip" data-id="{{$item->id}}" title="Xem chi tiết" class="btn btn-success show-order-detail"><i class="fa fa-eye fa-lg"></i></a>
+                                <a href="javascript:void(0)" data-toggle="tooltip" data-id="{{$item->id}}" title="Xem chi tiết" class="btn btn-success show-order-detail"><i class="fa fa-eye fa-lg"></i></a>
+                                    <a href="{{URL::route('export-order', $item->id)}}" data-toggle="tooltip" data-id="{{$item->id}}" title="In hóa đơn" class="btn btn-success order-excel"><i class="fa fa-file-excel-o" aria-hidden="true"></i></a>
                             </td>
                         </tr>
                     @empty
@@ -105,7 +106,7 @@
                     "orderable": false
                 } ]
             });
-            $('.show-order-detail').on('click', function(event){
+            $(document).on('click', '.show-order-detail', function(event){
                event.preventDefault();
                var id = $(this).data('id');
                 $('#showOrderDetail').modal().find('#content-order-detail').load(url+"admin/order/show-detail/"+id+" #orderDetailTable");

@@ -73,4 +73,12 @@ class  OrderRepository implements OrderRepositoryInterface
     {
         return Order::sum('total');
     }
+
+    public function getOrder($id)
+    {
+         return  Order::select('orders.*', 'customer.fullname as customer_name')
+                        ->join('customer', 'orders.customer_id', '=', 'customer.id')
+                        ->where('orders.id', $id)->first();
+
+    }
 }

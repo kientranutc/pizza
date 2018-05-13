@@ -162,7 +162,6 @@
 							</a>
 							<ul class="submenu">
 								<li><a href="{{URL::route('user.index')}}"><span class="submenu-label"></span>Quản lý user </a></li>
-								<li><a href="register.html"><span class="submenu-label">Quản lý quyền</span></a></li>
 							</ul>
 						</li>
 

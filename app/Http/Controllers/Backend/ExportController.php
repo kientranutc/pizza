@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Repositories\Export\ExportRepositoryInterface;
+use App\Repositories\Order\OrderRepositoryInterface;
 use App\Repositories\OrderDetail\OrderDetailRepositoryInterface;
 use App\Repositories\Products\ProductRepositoryInterface;
 use Illuminate\Http\Request;
@@ -13,11 +14,13 @@ use App\Http\Controllers\Controller;
 
 class ExportController extends Controller
 {
-    public function  __construct(ExportRepositoryInterface $export, ProductRepositoryInterface $product, OrderDetailRepositoryInterface $orderDetail)
+    public function  __construct(ExportRepositoryInterface $export, ProductRepositoryInterface $product,
+                                 OrderDetailRepositoryInterface $orderDetail, OrderRepositoryInterface $order)
     {
         $this->export = $export;
         $this->product = $product;
         $this->orderDetail = $orderDetail;
+        $this->order = $order;
         \view::shared('helper', new Helper());
     }
 
@@ -55,5 +58,20 @@ class ExportController extends Controller
         } else {
             return redirect()->back();
         }
+    }
+
+    public function  exportOrder($id)
+    {
+        $dataDetail = $this->orderDetail->all($id);
+        $dataOrder = $this->order->getOrder($id);
+        $data=[
+            'id' => $dataOrder['id'],
+            'fullname' => $dataOrder['customer_name'],
+            'date_order' => $dataOrder['date_order'],
+            'total' => $dataOrder['total'],
+            'content' => $dataDetail
+        ];
+        $view = "backend.export.order";
+        $this->export->exportProductStar($data, $view);
     }
 }

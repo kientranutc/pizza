@@ -15,4 +15,6 @@ interface OrderRepositoryInterface
 
     public function getMoneyOrder();
 
+    public function getOrder($id);
+
 }

@@ -59,6 +59,13 @@
 
                         <td class="text-center">{{number_format ($total)}}đ</td>
                     </tr>
+                    <tr>
+
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">Người tạo: <b>{{Auth::user()->fullname}}</b></td>
+                    </tr>
                     </tbody>
                 </table>
                 </body>
