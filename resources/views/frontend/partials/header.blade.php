@@ -26,7 +26,7 @@
                                  @endif
                             </div>
                             <div class="cart">
-                                <a href="{{URL::route('show-order')}}"><span class="glyphicon glyphicon-shopping-cart"></span> <span class="count-order">{{\Cart::count()}}</span>Giỏ hàng</a>
+                                <a href="{{URL::route('show-order')}}"><span class="glyphicon glyphicon-shopping-cart"></span> <span class="count-order">{{count(\Cart::content())}}</span>Giỏ hàng</a>
                             </div>
                             </ul>
                         </div>
@@ -77,7 +77,7 @@
                                             <li class="menu-hide-destop"><a href="{{URL::route('login-account')}}"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập</a></li>
                                             @endif
                                                 <li class="menu-hide-destop" id="cart-mobile-hide">
-                                                <a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> <span class="count-order">{{\Cart::count()}}</span>Giỏ hàng</a>
+                                                <a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> <span class="count-order">{{count(\Cart::content())}}</span>Giỏ hàng</a>
                                             </li>
                                         </ul>
 

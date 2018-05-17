@@ -14,9 +14,7 @@
     <tr>
         <th colspan="6" align="center">Thống kê sản phẩm được đánh giá</th>
     </tr>
-    <tr>
-        <th colspan="6" rowspan="3"></th>
-    </tr>
+
     <tr>
         <th>STT</th>
         <th>Sản phẩm</th>

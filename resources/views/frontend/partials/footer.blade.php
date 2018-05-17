@@ -6,10 +6,10 @@
                     <h4 class="footer__title">HỖ TRỢ</h4>
                     <ul class="footer__nav__item-sub">
                         <li>
-                            <a href="http://thepizzacompany.vn/vn/contact-us" class="footer__nav_link" title="Liên hệ với chúng tôi">Liên hệ với chúng tôi</a>
+                            <a href="/" class="footer__nav_link" title="Liên hệ với chúng tôi">Liên hệ với chúng tôi</a>
                         </li>
                         <li>
-                            <a href="http://thepizzacompany.vn/vn/stores" class="footer__nav_link" title="Cửa hàng">Cửa hàng</a>
+                            <a href="/" class="footer__nav_link" title="Cửa hàng">Cửa hàng</a>
                         </li>
                     </ul>
                 </div>
@@ -17,16 +17,16 @@
                     <h4 class="footer__title">THE PIZZA COMPANY</h4>
                     <ul class="footer__nav__item-sub">
                         <li>
-                            <a href="http://thepizzacompany.vn/vn/content/4-about-us" class="footer__nav_link" title="The Pizza Company">The Pizza Company</a>
+                            <a href="/" class="footer__nav_link" title="The Pizza Company">The Pizza Company</a>
                         </li>
                         <li>
-                            <a href="http://thepizzacompany.vn/vn/content/7-career" class="footer__nav_link" title="Nghề nghiệp">Nghề nghiệp</a>
+                            <a href="/" class="footer__nav_link" title="Nghề nghiệp">Nghề nghiệp</a>
                         </li>
                         <li>
-                            <a href="http://thepizzacompany.vn/vn/content/8-privacy-policy" class="footer__nav_link" title="Chính sách bảo mật">Chính sách bảo mật</a>
+                            <a href="/" class="footer__nav_link" title="Chính sách bảo mật">Chính sách bảo mật</a>
                         </li>
                         <li>
-                            <a href="http://thepizzacompany.vn/vn/content/9-terms-and-conditions-of-use" class="footer__nav_link" title="Điều khoản và điều kiện">Điều khoản và điều kiện</a>
+                            <a href="/" class="footer__nav_link" title="Điều khoản và điều kiện">Điều khoản và điều kiện</a>
                         </li>
                     </ul>
                 </div>
@@ -34,7 +34,7 @@
                     <h4 class="footer__title">Kết nối với chúng tôi</h4>
                     <ul class="list-social-connection">
                         <li class="list-social-connection__item">
-                            <a href=" https://www.facebook.com/ThePIZZAcompanyVN/ " title="facebook" class="list-social-connection__link" target="_blank">
+                            <a href="#" title="facebook" class="list-social-connection__link" target="_blank">
                                 <span class="fa fa-facebook"></span>
                             </a>
                         </li>
