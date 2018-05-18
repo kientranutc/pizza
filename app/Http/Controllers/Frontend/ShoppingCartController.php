@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Models\Bank;
 use App\Repositories\Customer\CustomerRepositoryInterface;
 use App\Repositories\Order\OrderRepositoryInterface;
 use App\Repositories\OrderDetail\OrderDetailRepositoryInterface;
@@ -66,6 +67,22 @@ class ShoppingCartController extends Controller
     public function processCheckOut(Request $request)
     {
         $requestCustomer =$request->except(['_token', 'note']);
+        $seri =  $request->get('seri');
+        $pin = $request->get('pin');
+        $checkExitsSeri = Bank::where('seri', $seri)->count();
+        $checkExitsSeriLogin = Bank::where('seri', $seri)
+                                ->where('pin', trim($pin,''))->first();
+
+        if ($checkExitsSeri==0){
+            return redirect()->back()->withErrors('Số tài khoản chưa tồn tại');
+        }
+        if (empty($checkExitsSeriLogin)){
+            return redirect()->back()->withErrors('Số thẻ hoặc mã pin sai');
+        }
+        $total = intval(\Cart::subTotal())."000";
+        if((intval(intval($checkExitsSeriLogin->money))-50000) - intval($total)<0){
+            return redirect()->back()->withErrors('Số tiền trong tài khoản không đủ để thanh toán');
+        }
         $customerId = $request->get('customer_id');
         $dataOrder = $this->cart->showCart();
         $email =$request->get('email');

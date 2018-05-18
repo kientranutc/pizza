@@ -69,6 +69,31 @@
                             </div>
                         </div>
                     </div>
+                    <div class="panel panel-info">
+                        @if($errors->any())
+                            <div class="alert alert-danger alert-dismissable">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Error!</strong> {{$errors->first()}}
+                            </div>
+                        @endif
+
+                        <div class="panel-heading">Thông tin thẻ</div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Mã số thẻ <span class="text-danger">*</span>:</strong></div>
+                                <div class="col-md-12">
+                                    <input type="text" required placeholder="Mã số thẻ" class="form-control" name="seri" value="" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12"><strong>Mã PIN <span class="text-danger">*</span>:</strong></div>
+                                <div class="col-md-12">
+                                    <input type="password" required placeholder="Mã pin" class="form-control" name="pin" value="" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                     <!--REVIEW ORDER END-->
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
