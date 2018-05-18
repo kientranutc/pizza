@@ -10,10 +10,31 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-05-04 14:46:46
+Date: 2018-05-18 08:17:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `bank`
+-- ----------------------------
+DROP TABLE IF EXISTS `bank`;
+CREATE TABLE `bank` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `seri` varchar(255) DEFAULT NULL,
+  `pin` varchar(16) DEFAULT NULL,
+  `money` double DEFAULT NULL,
+  `content` text,
+  `token` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of bank
+-- ----------------------------
+INSERT INTO `bank` VALUES ('1', '12345678910', '565642', '1000000', null, null, '2018-05-18 07:51:31', '2018-05-18 07:51:31');
 
 -- ----------------------------
 -- Table structure for `banner`
@@ -59,7 +80,7 @@ CREATE TABLE `blog` (
 -- ----------------------------
 INSERT INTO `blog` VALUES ('4', 'test2', 'http://pizza.local:8080/source/sale2.jpg', 'test2', '', '1', '2018-04-14 08:22:01', '2018-04-14 01:22:01', 'Admin', 'Admin');
 INSERT INTO `blog` VALUES ('5', 'Test1-13', 'http://pizza.local:8080/source/sale3.png', 'test1-13', '<p>test</p>', '1', '2018-04-14 08:21:50', '2018-04-14 01:21:50', 'Admin', 'Admin');
-INSERT INTO `blog` VALUES ('6', 'test-blog', 'http://pizza.local/source/Untitled.png', 'test-blog', '<p>test=blog</p>', '0', '2018-05-04 14:38:15', '2018-05-04 14:38:15', 'Admin', null);
+INSERT INTO `blog` VALUES ('6', 'test-blog', 'http://pizza.local/source/Untitled.png', 'test-blog', '<p>test=blog</p>\r\n<p style=\"text-align: center;\"><img src=\"http://pizza.local/source/sale2_1.jpg\" alt=\"\" width=\"722\" height=\"555\" /></p>', '1', '2018-05-04 15:27:38', '2018-05-04 15:27:38', 'Admin', null);
 
 -- ----------------------------
 -- Table structure for `categories`
@@ -187,7 +208,7 @@ CREATE TABLE `orders` (
   `created_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of orders
@@ -220,6 +241,7 @@ INSERT INTO `orders` VALUES ('25', '2018-05-04 13:03:54', '', '100000', '2', '0'
 INSERT INTO `orders` VALUES ('26', '2018-05-04 13:09:26', '', '100000', '2', '0', null, '2018-05-04 13:09:26', '2018-05-04 13:09:26');
 INSERT INTO `orders` VALUES ('27', '2018-05-04 13:38:15', '', '100000', '2', '0', null, '2018-05-04 13:38:15', '2018-05-04 13:38:15');
 INSERT INTO `orders` VALUES ('28', '2018-05-04 13:44:31', '', '0', '2', '0', null, '2018-05-04 13:44:31', '2018-05-04 13:44:31');
+INSERT INTO `orders` VALUES ('29', '2018-05-18 08:15:30', '', '216000', '2', '0', null, '2018-05-18 08:15:30', '2018-05-18 08:15:30');
 
 -- ----------------------------
 -- Table structure for `order_detail`
@@ -267,6 +289,7 @@ INSERT INTO `order_detail` VALUES ('24', '5', '100000', '1', '0', '2018-05-04 12
 INSERT INTO `order_detail` VALUES ('25', '5', '100000', '1', '0', '2018-05-04 13:03:54', '2018-05-04 13:03:54');
 INSERT INTO `order_detail` VALUES ('26', '5', '100000', '1', '0', '2018-05-04 13:09:27', '2018-05-04 13:09:27');
 INSERT INTO `order_detail` VALUES ('27', '5', '100000', '1', '0', '2018-05-04 13:38:15', '2018-05-04 13:38:15');
+INSERT INTO `order_detail` VALUES ('29', '3', '120000', '2', '10', '2018-05-18 08:15:31', '2018-05-18 08:15:31');
 
 -- ----------------------------
 -- Table structure for `products`
