@@ -80,6 +80,16 @@
                         <div class="panel-heading">Thông tin thẻ</div>
                         <div class="panel-body">
                             <div class="form-group">
+                                <div class="col-md-12"><strong>Ngân Hàng<span class="text-danger">*</span>:</strong></div>
+                               <div class="col-md-12">
+                                   <select name="bank_position" class="form-control" id="">
+                                       @foreach($bankPosition as $item)
+                                       <option value="{{$item->id}}"> {{$item->name}}</option>
+                                           @endforeach
+                                   </select>
+                               </div>
+                            </div>
+                            <div class="form-group">
                                 <div class="col-md-12"><strong>Mã số thẻ <span class="text-danger">*</span>:</strong></div>
                                 <div class="col-md-12">
                                     <input type="text" required placeholder="Mã số thẻ" class="form-control" name="seri" value="" />
@@ -144,12 +154,13 @@
 
                     <!--CREDIT CART PAYMENT END-->
                 </div>
-                <div class="row cart-footer text-center">
-                    <button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Thanh toán</button>
-                </div>
-                <br>
-            </form>
+
         </div>
+        <div class="row cart-footer text-center">
+            <button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Thanh toán</button>
+        </div>
+        <br>
+        </form>
 
     </div>
 </div>

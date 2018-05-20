@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\Bank;
+use App\Models\BankPosition;
+use App\Models\OrderBank;
 use App\Repositories\Customer\CustomerRepositoryInterface;
 use App\Repositories\Order\OrderRepositoryInterface;
 use App\Repositories\OrderDetail\OrderDetailRepositoryInterface;
@@ -61,12 +63,14 @@ class ShoppingCartController extends Controller
     public function checkout()
     {
         $listCart = $this->cart->showCart();
-        return view('frontend.checkout', compact('listCart'));
+        $bankPosition  = BankPosition::all();
+        return view('frontend.checkout', compact('listCart', 'bankPosition'));
     }
 
     public function processCheckOut(Request $request)
     {
         $requestCustomer =$request->except(['_token', 'note']);
+        $bankPosition = $request->get('bank_position');
         $seri =  $request->get('seri');
         $pin = $request->get('pin');
         $checkExitsSeri = Bank::where('seri', $seri)->count();
@@ -98,6 +102,13 @@ class ShoppingCartController extends Controller
                     'customer_id'=>$customerId
                 ];
                 $orderId = $this->order->save($orderLogined);
+                $bankOrder = new  OrderBank();
+                $bankOrder->order_id =$orderId;
+                $bankOrder->bank_seri = $seri;
+                $bankOrder->total = intval(explode(',',\Cart::subTotal())[0]."000");
+                $bankOrder->content = "Thanh toán tiền mua hàng";
+                $bankOrder->bank_position =$bankPosition;
+                $bankOrder->save();
                 if ($orderId) {
                     foreach (\Cart::content() as $item){
                         $this->orderDetail->save([
@@ -132,6 +143,13 @@ class ShoppingCartController extends Controller
                     'customer_id'=>$customerIds
                 ];
                 $orderId = $this->order->save($orderLogined);
+                $bankOrder = new  OrderBank();
+                $bankOrder->order_id =$orderId;
+                $bankOrder->bank_seri = $seri;
+                $bankOrder->total = intval(explode(',',\Cart::subTotal())[0]."000");
+                $bankOrder->content = "Thanh toán tiền mua hàng";
+                $bankOrder->bank_position =$bankPosition;
+                $bankOrder->save();
                 if ($orderId) {
                     foreach (\Cart::content() as $item){
                         $this->orderDetail->save([
